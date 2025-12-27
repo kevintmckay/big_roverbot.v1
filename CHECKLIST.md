@@ -9,9 +9,9 @@
 
 ---
 
-## To Buy - Tier 1 (Essential) ~$735
+## To Buy - Tier 1 (Essential) ~$767
 
-### Drivetrain (~$474) - OPTION B SELECTED
+### Drivetrain (~$506) - OPTION B SELECTED
 
 - [ ] Pololu 37D 131:1 motor 12V 76RPM w/encoder (x4) - ~$284
   - Link: https://www.pololu.com/product/4756
@@ -21,8 +21,9 @@
   - 2.8" wide, airless rubber tread
 - [ ] Cytron MDD10A dual motor driver (x2) - ~$30
   - Link: https://www.amazon.com/dp/B01N0XHZZ0
-- [ ] 6mm hub adapter for Pololu D-shaft (x4)
-  - Check ServoCity for compatible hubs
+- [ ] goBILDA 1309 Series Sonic Hub 6mm D-Bore (x4) - ~$32
+  - Link: https://www.gobilda.com/1309-series-sonic-hub-6mm-d-bore/
+  - Connects Pololu D-shaft to Wasteland wheel (16mm pattern)
 
 **Specs: 1.5 mph top speed, ~4" ground clearance, best torque for hills**
 
@@ -51,7 +52,7 @@
 - [ ] Barrel jack 5.5x2.5mm (for NUC) - ~$5
 - [ ] Wire 14AWG (power) + 22AWG (signal) - ~$12
 
-**Tier 1 Subtotal: ~$735**
+**Tier 1 Subtotal: ~$767**
 
 ---
 
@@ -81,9 +82,9 @@
 | Category | Status | Cost |
 |----------|--------|------|
 | Already owned | Done | $0 (saved ~$120) |
-| Tier 1 (Essential) | To buy | ~$735 |
+| Tier 1 (Essential) | To buy | ~$767 |
 | Tier 2 (Enhanced) | To buy | ~$220 |
-| **Total** | | **~$955** |
+| **Total** | | **~$987** |
 
 ### Selected Build (Option B)
 

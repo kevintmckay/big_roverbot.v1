@@ -1,6 +1,6 @@
-# Project 2: Intel NUC Robot Platform
+# RoverBot v1
 
-A larger robot platform built on Intel NUC with ROS2.
+Autonomous rover platform built on Intel NUC with ROS2.
 
 ## Hardware Summary
 
@@ -17,7 +17,7 @@ A larger robot platform built on Intel NUC with ROS2.
 
 ## Comparison: NUC vs Pi 5
 
-| Spec | Pi 5 (Project 1) | Intel NUC (Project 2) |
+| Spec | Pi 5 (Rock Crawler) | Intel NUC (RoverBot v1) |
 |------|------------------|----------------------|
 | CPU | Cortex-A76 @ 2.4GHz | Celeron N5105 @ 2.9GHz |
 | Cores | 4 | 4 |
@@ -148,4 +148,4 @@ Train models and develop code for Pi deployment:
 
 ## Related Project
 
-See `/home/kevin/robot/` for Project 1 (Pi 5 Rock Crawler)
+See `/home/kevin/robot/` for Pi 5 Rock Crawler project

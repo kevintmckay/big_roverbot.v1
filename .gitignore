@@ -1,0 +1,9 @@
+# Image files (inventory photos)
+*.jpg
+*.jpeg
+*.png
+*.gif
+
+# OS files
+.DS_Store
+Thumbs.db

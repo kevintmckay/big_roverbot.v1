@@ -41,6 +41,20 @@ Parts identified from photos in `/home/kevin/Photos-1-001/`
 | Raspberry Pi Camera Module | v1.3, OV5647 5MP (P5V04A SUNNY) | CSI-2, 1080p30/720p60, fixed focus |
 | RunCam FPV Camera | 650TVL NTSC (638 chip) | Board camera with lens |
 
+## USB Adapters
+
+| Part | Model | Notes |
+|------|-------|-------|
+| FTDI USB-UART Adapter | FTDI TOOL v1.1, FT232RL | Mini USB, DTR/RX/TX/VCC/CTS/GND |
+| SparkFun FTDI Basic | 5V version, FT232RL | 3.3V/5V selectable jumper |
+| CRIUS USB Adapter | USB-A with serial header | Possibly USB-to-Serial |
+
+## Voltage Regulators
+
+| Part | Model | Notes |
+|------|-------|-------|
+| Pololu 5V Step-Down | D37034 reg04b | Small regulator, ~500mA output |
+
 ## Other
 
 | Part | Description |

@@ -6,10 +6,13 @@
 - [x] Zippy Flightmax 4S LiPo (8000mAh, 14.8V) - main battery
 - [x] Turnigy nano-tech 4S LiPo (1800mAh, 14.8V) - backup
 - [x] TN GPS with Compass - primary GPS
+- [x] FTDI USB-UART Adapter (FT232RL) - for GPS connection
+- [x] SparkFun FTDI Basic 5V - spare USB-UART
+- [x] Pololu 5V Regulator (D37034) - small 5V supply (~500mA)
 
 ---
 
-## To Buy - Tier 1 (Essential) ~$920
+## To Buy - Tier 1 (Essential) ~$912
 
 ### Drivetrain (~$506) - OPTION B SELECTED
 
@@ -51,15 +54,13 @@
 - [ ] DC-DC Step-down 5V 3A (for sensors) - ~$8
   - For Arduino, encoders, small sensors
 
-### Motor Control Interface (~$35)
+### Motor Control Interface (~$25)
 
 - [ ] Arduino Mega 2560 or Teensy 4.1 - ~$25
   - Link: https://store.arduino.cc/products/arduino-mega-2560-rev3
   - NUC has NO GPIO - need microcontroller for PWM/encoder
   - Communicates with NUC via USB serial
-- [ ] USB-UART adapter (for GPS) - ~$8
-  - Search: "FTDI USB to UART TTL 3.3V"
-  - Connects TN GPS to NUC
+- [x] ~~USB-UART adapter (for GPS)~~ - **Already owned** (FTDI FT232RL)
 
 ### Frame Hardware (~$50)
 
@@ -85,7 +86,7 @@
 - [ ] Barrel jack 5.5x2.5mm (for NUC) - ~$5
 - [ ] Wire 14AWG (power) + 22AWG (signal) - ~$12
 
-**Tier 1 Subtotal: ~$920**
+**Tier 1 Subtotal: ~$912**
 
 ---
 
@@ -114,10 +115,10 @@
 
 | Category | Status | Cost |
 |----------|--------|------|
-| Already owned | Done | $0 (saved ~$120) |
-| Tier 1 (Essential) | To buy | ~$920 |
+| Already owned | Done | $0 (saved ~$128) |
+| Tier 1 (Essential) | To buy | ~$912 |
 | Tier 2 (Enhanced) | To buy | ~$220 |
-| **Total** | | **~$1140** |
+| **Total** | | **~$1132** |
 
 ### Selected Build (Option B)
 
@@ -175,7 +176,7 @@
 
 - [ ] Confirm 192mm Wasteland wheel hub pattern (goBILDA 16mm?)
 - [ ] Check Pololu 37D mounting hole dimensions for motor plates
-- [ ] Verify TN GPS voltage levels (3.3V or 5V UART?)
+- [x] ~~Verify TN GPS voltage levels~~ - Have FTDI adapters with 3.3V/5V selection
 
 ---
 

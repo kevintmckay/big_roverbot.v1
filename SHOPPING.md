@@ -4,12 +4,15 @@ Hardware for Intel NUC robot platform with ROS2.
 
 ## Already Owned
 
-| Component | Details |
-|-----------|---------|
-| Intel NUC | Celeron N5105, 32GB RAM, 2TB NVMe |
-| LiPo Batteries | Large capacity (from quad) |
-| GPS Module | (from quad) |
-| Flight Controller | Pixhawk/similar with IMU (from quad) |
+| Component | Details | Status |
+|-----------|---------|--------|
+| Intel NUC | Celeron N5105, 32GB RAM, 2TB NVMe | Confirmed |
+| Zippy Flightmax 4S LiPo | 8000mAh, 14.8V, 30C | Confirmed - main battery |
+| Turnigy nano-tech 4S LiPo | 1800mAh, 14.8V, 65-130C | Confirmed - testing/backup |
+| Matek GNSS SAM-M10Q | GPS/Galileo/GLONASS/BeiDou | Available - TBD |
+| TN GPS with Compass | GPS + magnetometer | Available - TBD |
+
+See `old-parts.md` for full inventory of available parts.
 
 ## Selected Build: Custom T-Slot Chassis
 
@@ -45,11 +48,11 @@ Full autonomous navigation rover.
 | Robot Chassis (4WD/6WD) | Base platform | $50-150 | See chassis options below |
 | Motor Driver | Control motors | $30-60 | Roboclaw 2x7A, ODrive |
 | 2D Lidar | SLAM and navigation | $99-200 | RPLidar A1 ($99), A2 ($300) |
-| 12V Battery | Power system | $30-50 | 3S/4S LiPo or SLA |
+| ~~12V Battery~~ | ~~Power system~~ | ~~$30-50~~ | **Already owned** (Zippy 8000mAh 4S) |
 | DC-DC Converters | Voltage regulation | $15-25 | 19V for NUC, 5V for sensors |
 | Wiring/Connectors | Integration | $20-30 | XT60, JST, barrel jacks |
 
-**Tier 1 Total: ~$250-500**
+**Tier 1 Total: ~$220-450** (saved ~$50 on battery)
 
 ### Tier 2: Enhanced Sensing (~$150-300)
 
@@ -67,7 +70,7 @@ Full autonomous navigation rover.
 | Component | Purpose | Price |
 |-----------|---------|-------|
 | 3D Lidar | Better mapping | $200-500 |
-| GPS Module | Outdoor nav | $20-50 |
+| GPS Module | Outdoor nav | $20-50 | *Have Matek SAM-M10Q available* |
 | Robot Arm | Manipulation | $200-800 |
 | Speaker/Mic | Voice interaction | $30-50 |
 
@@ -162,11 +165,11 @@ Balanced cost and capability:
 | Lidar | RPLidar A1 | $99 |
 | Depth Camera | Intel RealSense D435 | $180 |
 | IMU | BNO055 | $25 |
-| Battery | 4S LiPo 5000mAh | $60 |
+| ~~Battery~~ | ~~4S LiPo 5000mAh~~ | ~~$60~~ | **Owned** (Zippy 8000mAh) |
 | Power Board | Custom with DC-DC | $40 |
 | Mounting | Standoffs, plates | $30 |
 | Wiring | Connectors, cables | $25 |
-| **Total** | | **~$620** |
+| **Total** | | **~$560** (was $620) |
 
 ## Option B: Fleet Controller
 

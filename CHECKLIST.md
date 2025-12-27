@@ -9,17 +9,38 @@
 
 ---
 
-## To Buy - Tier 1 (Essential) ~$480
+## To Buy - Tier 1 (Essential) ~$675-$735
 
-### Drivetrain (~$250)
+### Drivetrain (~$414-$474)
 
-- [ ] Pololu 37D motor 12V 131RPM w/encoder (x4) - ~$120
+**Choose ONE motor/wheel combo:**
+
+**Option A: Speed Priority (2.0 mph, ~3" clearance)**
+- [ ] Pololu 37D 100:1 motor 12V 100RPM w/encoder (x4) - ~$284
+  - Link: https://www.pololu.com/product/4755
+  - Torque: 34 kg-cm, Speed: 100 RPM
+- [ ] 7.6" Wasteland Wheels 192mm (x4) - ~$160
+  - Link: https://www.servocity.com/192mm-wasteland-wheel/
+
+**Option B: Balanced (1.5 mph, ~4" clearance)**
+- [ ] Pololu 37D 131:1 motor 12V 76RPM w/encoder (x4) - ~$284
   - Link: https://www.pololu.com/product/4756
-- [ ] Cytron MDD10A dual motor driver (x2) - ~$30
-  - Link: https://www.amazon.com/dp/B01N0XHZZ0
+  - Torque: 45 kg-cm, Speed: 76 RPM
+- [ ] 7.6" Wasteland Wheels 192mm (x4) - ~$160
+  - Link: https://www.servocity.com/192mm-wasteland-wheel/
+
+**Option C: Budget (1.5 mph, ~2.5" clearance)**
+- [ ] Pololu 37D 100:1 motor 12V 100RPM w/encoder (x4) - ~$284
+  - Link: https://www.pololu.com/product/4755
+  - Torque: 34 kg-cm, Speed: 100 RPM
 - [ ] 5.7" Wasteland Wheels 144mm (x4) - ~$100
   - Link: https://www.servocity.com/144mm-wasteland-wheel/
-  - Note: Need 6mm hub adapter for Pololu D-shaft
+
+**All options need:**
+- [ ] Cytron MDD10A dual motor driver (x2) - ~$30
+  - Link: https://www.amazon.com/dp/B01N0XHZZ0
+- [ ] 6mm hub adapter for Pololu D-shaft (x4)
+  - Check ServoCity for compatible hubs
 
 ### Frame (~$100)
 
@@ -46,7 +67,7 @@
 - [ ] Barrel jack 5.5x2.5mm (for NUC) - ~$5
 - [ ] Wire 14AWG (power) + 22AWG (signal) - ~$12
 
-**Tier 1 Subtotal: ~$480**
+**Tier 1 Subtotal: ~$675-$735** (depending on wheel choice)
 
 ---
 
@@ -76,9 +97,17 @@
 | Category | Status | Cost |
 |----------|--------|------|
 | Already owned | Done | $0 (saved ~$120) |
-| Tier 1 (Essential) | To buy | ~$480 |
+| Tier 1 (Essential) | To buy | ~$675-$735 |
 | Tier 2 (Enhanced) | To buy | ~$220 |
-| **Total** | | **~$700** |
+| **Total** | | **~$895-$955** |
+
+### Option Summary
+
+| Option | Wheels | Speed | Clearance | Drivetrain Cost |
+|--------|--------|-------|-----------|-----------------|
+| A | 7.6" | 2.0 mph | ~3" | ~$474 |
+| B | 7.6" | 1.5 mph | ~4" | ~$474 |
+| C | 5.7" | 1.5 mph | ~2.5" | ~$414 |
 
 ---
 

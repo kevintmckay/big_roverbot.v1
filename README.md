@@ -38,9 +38,7 @@ Using OpenVINO acceleration on Intel UHD Graphics:
 | YOLOv8n 640 | ~150ms (7 FPS) | ~80ms (12 FPS) | 457ms (2 FPS) |
 | YOLOv8s 640 | ~400ms (2.5 FPS) | ~200ms (5 FPS) | Too slow |
 
-## Project Options
-
-### Option A: Medium Robot Platform (Recommended)
+## Architecture
 
 Indoor/outdoor rover with full autonomous navigation:
 
@@ -72,51 +70,6 @@ Capabilities:
 - Multi-sensor fusion
 - Remote operation via web/app
 
-### Option B: Crawler Fleet Controller
-
-Base station for multiple Pi-based crawlers:
-
-```
-                    Intel NUC (Base Station)
-                           |
-        +------------------+------------------+
-        |                  |                  |
-   Pi Crawler 1       Pi Crawler 2       Pi Crawler 3
-```
-
-Features:
-- Centralized mission planning
-- Aggregate video processing
-- Fleet coordination
-- Data logging (2TB storage)
-
-### Option C: Robot Arm Platform
-
-Desktop manipulation robot:
-
-```
-+------------------+
-|    Intel NUC     |
-+------------------+
-        |
-+------------------+
-| 6-DOF Robot Arm  |  <-- MoveIt2 control
-+------------------+
-        |
-+------------------+
-|  Depth Camera    |  <-- Object detection
-+------------------+
-```
-
-### Option D: Development Server
-
-Train models and develop code for Pi deployment:
-
-- Faster iteration than Colab
-- Local Jupyter notebooks
-- Docker containers
-- CI/CD for robot code
-
 ## Recommended Software Stack
 
 | Layer | Component |
@@ -137,14 +90,15 @@ Train models and develop code for Pi deployment:
 | ROS2_GUIDE.md | ROS2 concepts and getting started |
 | CHASSIS_BUILD.md | Custom 24"x12" T-slot chassis build |
 | SHOPPING.md | Bill of materials |
+| NEXT_PROJECTS.md | Future project ideas |
 
 ## Getting Started
 
 1. Install Ubuntu 24.04 on NUC
 2. Install ROS2 Jazzy (see ROS2_GUIDE.md)
-3. Choose robot platform
-4. Acquire hardware (see SHOPPING.md)
-5. Build and integrate
+3. Acquire hardware (see SHOPPING.md)
+4. Build chassis (see CHASSIS_BUILD.md)
+5. Integrate and test
 
 ## Related Project
 

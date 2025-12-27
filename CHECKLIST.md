@@ -9,7 +9,7 @@
 
 ---
 
-## To Buy - Tier 1 (Essential) ~$767
+## To Buy - Tier 1 (Essential) ~$920
 
 ### Drivetrain (~$506) - OPTION B SELECTED
 
@@ -24,6 +24,7 @@
 - [ ] goBILDA 1309 Series Sonic Hub 6mm D-Bore (x4) - ~$32
   - Link: https://www.gobilda.com/1309-series-sonic-hub-6mm-d-bore/
   - Connects Pololu D-shaft to Wasteland wheel (16mm pattern)
+  - ⚠️ VERIFY: Confirm 192mm Wasteland uses 16mm goBILDA pattern before ordering!
 
 **Specs: 1.5 mph top speed, ~4" ground clearance, best torque for hills**
 
@@ -39,12 +40,44 @@
 - [ ] RPLidar A1 (12m, 5.5Hz) - ~$99
   - Link: https://www.amazon.com/dp/B07TJW5SXF
 
-### Power (~$35)
+### Power (~$50)
 
-- [ ] DC-DC Step-down 19V 4A (for NUC) - ~$20
-  - Search: "DC-DC 19V 4A step down buck converter"
-- [ ] DC-DC Step-down 12V 5A (for motors/lidar) - ~$12
-  - Search: "DC-DC 12V 5A buck converter"
+- [ ] DC-DC Boost Converter 19V 5A (for NUC) - ~$25
+  - Search: "DC-DC boost converter 12V to 19V 5A"
+  - NOTE: Must be BOOST (step-up), 4S LiPo is only 14.8V!
+- [ ] DC-DC Step-down 12V 10A (for motors) - ~$15
+  - Search: "DC-DC 12V 10A buck converter"
+  - Or run motors direct from 4S battery (14.8V OK for 12V motors)
+- [ ] DC-DC Step-down 5V 3A (for sensors) - ~$8
+  - For Arduino, encoders, small sensors
+
+### Motor Control Interface (~$35)
+
+- [ ] Arduino Mega 2560 or Teensy 4.1 - ~$25
+  - Link: https://store.arduino.cc/products/arduino-mega-2560-rev3
+  - NUC has NO GPIO - need microcontroller for PWM/encoder
+  - Communicates with NUC via USB serial
+- [ ] USB-UART adapter (for GPS) - ~$8
+  - Search: "FTDI USB to UART TTL 3.3V"
+  - Connects TN GPS to NUC
+
+### Frame Hardware (~$50)
+
+- [ ] Motor mount plates (custom cut) - ~$40
+  - Link: https://sendcutsend.com/
+  - 4x plates to mount Pololu 37D to T-slot frame
+  - Need to design for 37mm motor diameter
+- [ ] NUC mounting standoffs (rubber, vibration isolating) - ~$10
+  - Search: "M3 rubber standoffs vibration"
+
+### Safety (~$25)
+
+- [ ] Inline fuse holder + 20A fuse - ~$8
+  - Between battery and power distribution
+- [ ] Emergency stop switch (mushroom button) - ~$10
+  - Cuts motor power, easy to reach
+- [ ] LiPo battery alarm/monitor - ~$7
+  - Prevents over-discharge, plugs into balance lead
 
 ### Wiring/Misc (~$25)
 
@@ -52,7 +85,7 @@
 - [ ] Barrel jack 5.5x2.5mm (for NUC) - ~$5
 - [ ] Wire 14AWG (power) + 22AWG (signal) - ~$12
 
-**Tier 1 Subtotal: ~$767**
+**Tier 1 Subtotal: ~$920**
 
 ---
 
@@ -82,9 +115,9 @@
 | Category | Status | Cost |
 |----------|--------|------|
 | Already owned | Done | $0 (saved ~$120) |
-| Tier 1 (Essential) | To buy | ~$767 |
+| Tier 1 (Essential) | To buy | ~$920 |
 | Tier 2 (Enhanced) | To buy | ~$220 |
-| **Total** | | **~$987** |
+| **Total** | | **~$1140** |
 
 ### Selected Build (Option B)
 
@@ -103,6 +136,46 @@
 - [ ] Beitian BN-880 GPS (~$30) - if TN GPS insufficient
 - [ ] Intel RealSense D455 (~$250) - better outdoor performance
 - [ ] RPLidar A2 (~$300) - faster scan rate
+
+---
+
+## Architecture Notes
+
+**NUC has NO GPIO** - requires microcontroller interface:
+
+```
+                         USB Serial
+    Intel NUC (ROS2) ←──────────────→ Arduino Mega
+                                           │
+                                      PWM/DIR → Cytron MDD10A → Motors
+                                      Encoder inputs (4x)
+
+    USB-UART ──→ TN GPS
+    USB ──────→ RPLidar A1
+    USB ──────→ RealSense D435
+    USB/I2C ──→ BNO055 IMU
+```
+
+**Power flow:**
+```
+    4S LiPo (14.8V)
+         │
+         ├──→ Fuse (20A)
+         │         │
+         │         ├──→ Boost 19V ──→ NUC
+         │         ├──→ Buck 12V ───→ Motors (via MDD10A)
+         │         └──→ Buck 5V ────→ Arduino, sensors
+         │
+         └──→ E-Stop switch (motor power only)
+```
+
+---
+
+## Pre-Order Verification
+
+- [ ] Confirm 192mm Wasteland wheel hub pattern (goBILDA 16mm?)
+- [ ] Check Pololu 37D mounting hole dimensions for motor plates
+- [ ] Verify TN GPS voltage levels (3.3V or 5V UART?)
 
 ---
 

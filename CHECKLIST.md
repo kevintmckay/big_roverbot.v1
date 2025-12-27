@@ -9,16 +9,17 @@
 
 ---
 
-## To Buy - Tier 1 (Essential) ~$450
+## To Buy - Tier 1 (Essential) ~$480
 
-### Drivetrain (~$220)
+### Drivetrain (~$250)
 
 - [ ] Pololu 37D motor 12V 131RPM w/encoder (x4) - ~$120
   - Link: https://www.pololu.com/product/4756
 - [ ] Cytron MDD10A dual motor driver (x2) - ~$30
   - Link: https://www.amazon.com/dp/B01N0XHZZ0
-- [ ] 6" wheels aluminum hub (x4) - ~$70
-  - Link: https://www.servocity.com/6-heavy-duty-wheel/
+- [ ] 5.7" Wasteland Wheels 144mm (x4) - ~$100
+  - Link: https://www.servocity.com/144mm-wasteland-wheel/
+  - Note: Need 6mm hub adapter for Pololu D-shaft
 
 ### Frame (~$100)
 
@@ -45,7 +46,7 @@
 - [ ] Barrel jack 5.5x2.5mm (for NUC) - ~$5
 - [ ] Wire 14AWG (power) + 22AWG (signal) - ~$12
 
-**Tier 1 Subtotal: ~$450**
+**Tier 1 Subtotal: ~$480**
 
 ---
 
@@ -75,9 +76,9 @@
 | Category | Status | Cost |
 |----------|--------|------|
 | Already owned | Done | $0 (saved ~$120) |
-| Tier 1 (Essential) | To buy | ~$450 |
+| Tier 1 (Essential) | To buy | ~$480 |
 | Tier 2 (Enhanced) | To buy | ~$220 |
-| **Total** | | **~$670** |
+| **Total** | | **~$700** |
 
 ---
 

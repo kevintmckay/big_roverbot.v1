@@ -32,7 +32,7 @@ Parts identified from photos in `/home/kevin/Photos-1-001/`
 |------|-------|-------|
 | TN GPS | With Compass | Drone GPS/magnetometer |
 | Generic GPS Module | 1SU6 V1.1 | UART (TX/RX/5V/GND), ceramic patch antenna |
-| Matek GNSS SAM-M10Q | u-blox SAM-M10Q | GPS/Galileo/GLONASS/BeiDou B1C |
+| ~~Matek GNSS SAM-M10Q~~ | ~~u-blox SAM-M10Q~~ | ~~GPS/Galileo/GLONASS/BeiDou B1C~~ - *allocated to airplane* |
 
 ## Cameras
 

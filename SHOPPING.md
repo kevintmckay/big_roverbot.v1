@@ -9,8 +9,8 @@ Hardware for Intel NUC robot platform with ROS2.
 | Intel NUC | Celeron N5105, 32GB RAM, 2TB NVMe | Confirmed |
 | Zippy Flightmax 4S LiPo | 8000mAh, 14.8V, 30C | Confirmed - main battery |
 | Turnigy nano-tech 4S LiPo | 1800mAh, 14.8V, 65-130C | Confirmed - testing/backup |
-| Matek GNSS SAM-M10Q | GPS/Galileo/GLONASS/BeiDou | Available - TBD |
 | TN GPS with Compass | GPS + magnetometer | Available - TBD |
+| Generic GPS (1SU6 V1.1) | UART GPS module | Available - TBD |
 
 See `old-parts.md` for full inventory of available parts.
 
@@ -70,7 +70,7 @@ Full autonomous navigation rover.
 | Component | Purpose | Price |
 |-----------|---------|-------|
 | 3D Lidar | Better mapping | $200-500 |
-| GPS Module | Outdoor nav | $20-50 | *Have Matek SAM-M10Q available* |
+| GPS Module | Outdoor nav | $20-50 | *Have TN GPS w/compass available* |
 | Robot Arm | Manipulation | $200-800 |
 | Speaker/Mic | Voice interaction | $30-50 |
 

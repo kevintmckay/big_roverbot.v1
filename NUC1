@@ -1,0 +1,121 @@
+RoverBot v1 - Server Hardware Assessment
+=========================================
+
+Date: 2025-12-27
+Purpose: Evaluate current server as robot brain
+
+SYSTEM IDENTIFICATION
+---------------------
+Motherboard: Intel DCP847SKE (G80890-104)
+Generation: Sandy Bridge (2012)
+Form Factor: NUC (thin mini-ITX)
+
+CURRENT HARDWARE
+----------------
+Component       | This Server              | Project Spec (README)
+----------------|--------------------------|-------------------------
+CPU             | Celeron 847 @ 1.1GHz     | Celeron N5105 @ 2.0GHz
+Architecture    | Sandy Bridge (2012)      | Jasper Lake (2021)
+Cores           | 2                        | 4
+Threads         | 2                        | 4
+Max Turbo       | 1.1GHz (none)            | 2.9GHz
+RAM             | 8GB DDR3                 | 32GB DDR4
+Storage         | 120GB SATA SSD           | 2TB NVMe
+GPU             | Intel HD Graphics (Gen2) | Intel UHD (Jasper Lake)
+OpenVINO        | Not supported            | Supported
+TDP             | 17W                      | 10W
+
+OPERATING SYSTEM
+----------------
+Current: Debian 13 (trixie)
+Project Spec: Ubuntu 24.04 LTS
+ROS2: Not installed
+Docker: Installed (v29.1.3)
+Python: 3.13.5
+
+CPU CAPABILITIES
+----------------
+VT-x: Yes
+SSE4.1/4.2: Yes
+AVX: No (required for modern OpenVINO)
+AVX2: No
+
+STORAGE
+-------
+Device: Crucial CT120M500SSD3
+Size: 112GB
+Used: 21GB
+Available: 78GB
+Interface: SATA (not NVMe)
+
+NETWORK
+-------
+Interfaces: eno1 (ethernet), docker0, br-7c91c485fcf2
+
+ASSESSMENT: NOT SUITABLE
+========================
+
+This server is an older Intel NUC from 2012 and does NOT match the hardware
+documented in the project README. Critical limitations:
+
+1. CPU Performance
+   - 2 cores vs 4 cores required
+   - 1.1GHz vs 2.0-2.9GHz required
+   - ~3-4x slower single-thread, ~6-8x slower multi-thread
+   - Cannot run Nav2 + SLAM + vision simultaneously
+
+2. No OpenVINO Support
+   - Sandy Bridge GPU lacks OpenVINO acceleration
+   - No AVX instructions for optimized inference
+   - YOLOv8n would run at <5 FPS (vs 20-33 FPS on N5105)
+   - Real-time object detection not feasible
+
+3. Insufficient RAM
+   - 8GB vs 32GB required
+   - ROS2 Jazzy + Nav2 + Gazebo needs 16GB minimum
+   - No headroom for vision models
+
+4. Storage Limitations
+   - 120GB vs 2TB required
+   - SATA vs NVMe (slower)
+   - Insufficient for rosbag recordings, maps, training data
+
+5. OS Compatibility
+   - Debian 13 not officially supported by ROS2 Jazzy
+   - Would need Ubuntu 24.04 for proper ROS2 support
+
+PERFORMANCE ESTIMATES (this server)
+-----------------------------------
+Task                    | Estimate
+------------------------|------------------
+YOLOv8n inference       | 200-400ms (2-5 FPS)
+SLAM (slam_toolbox)     | Marginal, may lag
+Nav2 path planning      | Slow, 1-2 sec latency
+Gazebo simulation       | Not usable
+Concurrent ROS2 nodes   | 3-4 max before issues
+
+RECOMMENDATION
+--------------
+This server (DCP847SKE) should NOT be used as the robot brain.
+
+Options:
+1. Acquire the NUC specified in README (Intel NUC11 with N5105)
+2. Use a Raspberry Pi 5 for basic operation (reduced capability)
+3. Use this server only for:
+   - Code development/editing
+   - Remote monitoring dashboard
+   - Network file storage
+   - Non-real-time data processing
+
+The DCP847SKE could serve as a secondary server for fleet coordination
+(Option B in README) but lacks the compute for on-robot autonomy.
+
+HARDWARE UPGRADE PATH
+---------------------
+If upgrading this specific board:
+- Max RAM: 8GB (already at limit)
+- CPU: Soldered (not upgradeable)
+- Storage: Can add larger SATA SSD
+
+Conclusion: Replace, don't upgrade. The NUC11 with N5105 provides
+approximately 10x the effective robotics compute capability.

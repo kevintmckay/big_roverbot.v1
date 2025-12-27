@@ -38,6 +38,7 @@ Parts identified from photos in `/home/kevin/Photos-1-001/`
 
 | Part | Model | Notes |
 |------|-------|-------|
+| Raspberry Pi Camera Module | v1.3, OV5647 5MP (P5V04A SUNNY) | CSI-2, 1080p30/720p60, fixed focus |
 | RunCam FPV Camera | 650TVL NTSC (638 chip) | Board camera with lens |
 
 ## Other

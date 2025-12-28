@@ -4,6 +4,9 @@
 *.png
 *.gif
 
+# But track design diagrams
+!Motor-mount.png
+
 # OS files
 .DS_Store
 Thumbs.db

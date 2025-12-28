@@ -9,107 +9,123 @@
 | Component | Specification |
 |-----------|---------------|
 | Dimensions | 24" x 12" (610mm x 305mm) |
-| Frame | 1" or 1.5" aluminum T-slot extrusion |
+| Frame | 1" aluminum T-slot extrusion |
 | Joints | Corner brackets, T-nuts, bolts |
 | Deck | 0.125" aluminum sheet, bolted to frame |
-| Motor mounts | Custom plates (SendCutSend or similar) |
+| Motor mounts | Custom plates (SendCutSend) |
+| Ground clearance | ~4" (100mm) |
 
-### Drivetrain
+### Drivetrain (Option B - Selected)
 
 | Component | Specification |
 |-----------|---------------|
-| Motors | Pololu 37D, 12V, 131 RPM, with encoders (x4) |
-| Wheels | 6" diameter, aluminum hub (x4) |
-| Hubs | 6mm D-shaft adapters (x4) |
+| Motors | Pololu 37D 131:1, 12V, 76 RPM, with encoders (x4) |
+| Wheels | 7.6" (192mm) Wasteland, airless rubber (x4) |
+| Hubs | goBILDA 1309 Sonic Hub, 6mm D-Bore (x4) |
 | Motor drivers | Cytron MDD10A dual channel (x2) |
 
 ### Computed Specs
 
 ```
-Wheel diameter:    6" (152mm)
-Motor RPM:         131 RPM (no load)
-Wheel circumference: 6" × π = 18.85" (478mm)
+Wheel diameter:     7.6" (192mm)
+Motor RPM:          76 RPM (no load)
+Gear ratio:         131.25:1
+Wheel circumference: 7.6" × π = 23.88" (606mm)
 
-Max speed: 131 RPM × 18.85"/rev = 2469 in/min = 3.4 mph (5.5 km/h)
+Max speed: 76 RPM × 23.88"/rev = 1815 in/min = 1.5 mph (2.4 km/h)
 
-Good speed for outdoor rover with sensors.
+Motor stall torque:  45 kg-cm
+Ground force (4 wheels): 188N total
+
+Good torque for hills and rough terrain.
 ```
+
+### Weight Budget
+
+| Component | Weight |
+|-----------|--------|
+| Intel NUC | 0.5 kg |
+| 4S LiPo 8000mAh | 0.8 kg |
+| Frame + plates | 2.5 kg |
+| Motors (4x) | 0.8 kg |
+| Wheels (4x 192mm) | 3.2 kg |
+| Electronics | 0.5 kg |
+| **Total** | **~8.3 kg** |
+
+Wheel capacity: 4 × 6kg = 24kg ✓
 
 ## Bill of Materials
 
-### Frame (~$100-150)
+### Frame (~$100)
 
 | Item | Qty | Source | Est. Price |
 |------|-----|--------|------------|
-| 1" T-slot extrusion (1m lengths) | 4-6 | 80/20, OpenBuilds, Misumi | $40-60 |
-| Corner brackets | 8-12 | OpenBuilds, Amazon | $20-30 |
-| T-nuts (pack) | 50+ | OpenBuilds, Amazon | $10-15 |
-| Bolts/hardware kit | 1 | McMaster-Carr | $15-20 |
-| 0.125" aluminum deck plate | 1 | SendCutSend, local metal | $20-30 |
-| Motor mount plates (custom cut) | 4 | SendCutSend | $20-40 |
+| 1" T-slot extrusion (1m lengths) | 4 | OpenBuilds | $60 |
+| Corner brackets, T-nuts, hardware | 1 kit | OpenBuilds | $40 |
 
-### Drivetrain (~$230-250)
+### Frame Hardware (~$50)
 
 | Item | Qty | Source | Est. Price |
 |------|-----|--------|------------|
-| Pololu 37D 12V 131RPM w/encoder | 4 | Pololu.com | $140 ($35 ea) |
-| 6" wheels with aluminum hub | 4 | ServoCity, AndyMark | $60-80 |
-| 6mm D-shaft hub adapters | 4 | ServoCity | $15-20 |
-| Cytron MDD10A motor driver | 2 | Cytron, Amazon | $30-40 |
+| Motor mount plates (custom cut) | 4 | SendCutSend | $40 |
+| NUC rubber standoffs (M3) | 1 set | Amazon | $10 |
 
-### Total: ~$350-400
+### Drivetrain (~$506)
+
+| Item | Qty | Source | Est. Price |
+|------|-----|--------|------------|
+| Pololu 37D 131:1 12V w/encoder | 4 | Pololu | $284 |
+| 7.6" Wasteland Wheels (192mm) | 4 | ServoCity | $160 |
+| goBILDA 1309 Sonic Hub 6mm D-Bore | 4 | goBILDA | $32 |
+| Cytron MDD10A motor driver | 2 | Amazon | $30 |
+
+### Total Frame + Drivetrain: ~$656
 
 ## Sources
 
 | Category | Suppliers |
 |----------|-----------|
-| Extrusion | [80/20](https://8020.net), [OpenBuilds](https://openbuildspartstore.com), [Misumi](https://us.misumi-ec.com) |
-| Motors | [Pololu](https://www.pololu.com/product/4756) |
-| Wheels/Hubs | [ServoCity](https://www.servocity.com), [AndyMark](https://www.andymark.com) |
+| Extrusion | [OpenBuilds](https://openbuildspartstore.com) |
+| Motors | [Pololu #4756](https://www.pololu.com/product/4756) |
+| Wheels | [ServoCity](https://www.servocity.com/192mm-wasteland-wheel/) |
+| Hubs | [goBILDA](https://www.gobilda.com/1309-series-sonic-hub-6mm-d-bore/) |
 | Cut plates | [SendCutSend](https://sendcutsend.com) |
-| Hardware | [McMaster-Carr](https://www.mcmaster.com) |
 
 ## Frame Design
 
 ### Top View
 ```
-        24" (610mm)
-+---------------------------+
-|  [NUC]   [Lidar]   [GPS]  |
-|                           |  12"
-|  [Driver] [Batt] [Driver] |  (305mm)
-|                           |
-+---------------------------+
-[M1]                     [M2]
-[W1]                     [W2]
-[W3]                     [W4]
-[M3]                     [M4]
+          24" (610mm)
++-------------------------------+
+|  [NUC]    [Lidar]    [GPS]    |
+|                               |  12"
+|  [Arduino] [Batt] [Drivers]   |  (305mm)
+|                               |
++-------------------------------+
+  ||                         ||
+[====]                     [====]  <- 7.6" Wasteland wheels
+  ||                         ||
+[====]                     [====]
+  M1,M3                    M2,M4
 ```
 
 ### Side View
 ```
-     +-------------------+
-     |    Electronics    |
-     +-------------------+
-        |             |
-      [===]         [===]   <- 6" wheels
-        |             |
-     +-------------------+
-     |      Deck         |
-     +-------------------+
+        +---------------------+
+        |    Electronics      |  <- NUC, Arduino, drivers
+        +---------------------+
+           |               |
+        [=====]         [=====]   <- 7.6" wheels (192mm)
+           |               |
+    ─────────────────────────────  Ground
+              ~4" clearance
 ```
 
-### T-Slot Frame Assembly
+### Overall Dimensions with Wheels
 ```
-Corner detail:
-
-    +=======+
-    |       |
-    |   +---+---
-    |   | bracket
-    +===+===+---
-        |
-        |
+Total width:  12" + 2×2.8" = ~17.6" (447mm)
+Total length: 24" (610mm)
+Total height: ~8" (frame + electronics)
 ```
 
 ## Motor Wiring
@@ -118,8 +134,8 @@ Corner detail:
 ```
 Motor: Red (+), Black (-)
 Encoder:
-  - Green: Encoder GND
-  - Blue:  Encoder Vcc (3.5-20V)
+  - Green:  Encoder GND
+  - Blue:   Encoder Vcc (3.5-20V)
   - Yellow: Encoder A output
   - White:  Encoder B output
 ```
@@ -129,51 +145,100 @@ Encoder:
 MDD10A Driver #1 (Left side)
   - Motor A: Front Left (M1)
   - Motor B: Rear Left (M3)
-  - PWM1/DIR1: Pi GPIO or NUC
-  - PWM2/DIR2: Pi GPIO or NUC
+  - PWM1/DIR1: Arduino pins
+  - PWM2/DIR2: Arduino pins
 
 MDD10A Driver #2 (Right side)
   - Motor A: Front Right (M2)
   - Motor B: Rear Right (M4)
-  - PWM3/DIR3: Pi GPIO or NUC
-  - PWM4/DIR4: Pi GPIO or NUC
+  - PWM3/DIR3: Arduino pins
+  - PWM4/DIR4: Arduino pins
 ```
 
-### Power Distribution
+### Arduino Mega Pin Assignments
 ```
-Battery (12V LiPo 3S or 4S with regulator)
-    |
-    +---> MDD10A #1 VIN ---> Motors M1, M3
-    |
-    +---> MDD10A #2 VIN ---> Motors M2, M4
-    |
-    +---> 19V Buck --------> Intel NUC
-    |
-    +---> 5V Buck ---------> Sensors, encoders
+Motor Control (8 pins):
+  - Pin 2:  PWM1 (M1 speed)
+  - Pin 3:  DIR1 (M1 direction)
+  - Pin 4:  PWM2 (M3 speed)
+  - Pin 5:  DIR2 (M3 direction)
+  - Pin 6:  PWM3 (M2 speed)
+  - Pin 7:  DIR3 (M2 direction)
+  - Pin 8:  PWM4 (M4 speed)
+  - Pin 9:  DIR4 (M4 direction)
+
+Encoder Inputs (8 pins):
+  - Pin 18: M1 Encoder A (interrupt)
+  - Pin 19: M1 Encoder B (interrupt)
+  - Pin 20: M2 Encoder A (interrupt)
+  - Pin 21: M2 Encoder B (interrupt)
+  - Pin 22: M3 Encoder A
+  - Pin 23: M3 Encoder B
+  - Pin 24: M4 Encoder A
+  - Pin 25: M4 Encoder B
 ```
 
-## Integration with Existing Hardware
+## Power Distribution
 
-### From Quad/Drone Inventory
-
-| Component | Use in Rover |
-|-----------|--------------|
-| LiPo batteries (3S/4S) | Main power (with voltage check) |
-| Flight controller (Pixhawk) | IMU + sensor fusion (optional) |
-| GPS module | Outdoor navigation |
-| Telemetry radio | Remote monitoring |
-
-### NUC Mounting
-
+### Power Architecture
 ```
-T-slot mounting options:
+4S LiPo (14.8V nominal, 8000mAh)
+         │
+         ├──→ 20A Fuse
+         │         │
+         │         ├──→ Boost 19V 5A ──→ Intel NUC (barrel jack)
+         │         │
+         │         ├──→ Buck 12V 10A ──→ MDD10A #1 VIN ──→ M1, M3
+         │         │                 └──→ MDD10A #2 VIN ──→ M2, M4
+         │         │
+         │         └──→ Buck 5V 3A ───→ Arduino Mega
+         │                           └──→ Encoder Vcc
+         │
+         └──→ E-Stop ──→ Motor power cutoff
 
-1. Direct bolt through deck plate
-2. Rubber standoffs for vibration isolation
-3. Quick-release plate for easy removal
-
-Recommended: Rubber standoffs + aluminum plate
+Note: 4S LiPo is 14.8V - need BOOST converter for 19V NUC!
 ```
+
+### Power Budget
+```
+NUC:           15W typical (19V × 0.8A)
+Motors (4x):   48W peak (12V × 1A each typical)
+Arduino:       0.5W
+Sensors:       2W
+─────────────────────────
+Total:         ~65W typical, ~100W peak
+
+Runtime: 8000mAh × 14.8V = 118Wh
+         118Wh / 65W = ~1.8 hours typical
+```
+
+## Control Architecture
+
+### System Overview
+```
+                            USB Serial
+    Intel NUC (ROS2) ←─────────────────→ Arduino Mega 2560
+         │                                      │
+         │                                 PWM/DIR signals
+         │                                      │
+         │                              Cytron MDD10A (x2)
+         │                                      │
+         │                              Pololu 37D Motors (x4)
+         │                                      │
+         │                              Encoder feedback (x4)
+         │
+         ├── USB ──→ FTDI ──→ TN GPS
+         ├── USB ──→ RPLidar A1
+         ├── USB ──→ Intel RealSense D435
+         └── USB ──→ FT232H ──→ BNO055 IMU (I2C)
+```
+
+### Why Arduino?
+Intel NUC has **NO GPIO pins**. Arduino Mega provides:
+- PWM outputs for motor speed control
+- Digital outputs for direction control
+- Interrupt-capable inputs for encoder counting
+- USB serial communication with NUC
 
 ## Assembly Steps
 
@@ -186,121 +251,157 @@ Recommended: Rubber standoffs + aluminum plate
    - Use T-nuts and bolts
    - Square the frame before tightening
 
-3. **Attach deck plate**
-   - Drill mounting holes
-   - Use T-nuts from below
+3. **Mount motors**
+   - Attach custom motor plates to T-slot frame
+   - Bolt Pololu 37D motors to plates (M3 screws)
+   - Motors mount on outside of frame
 
-4. **Mount motors**
-   - Attach custom motor plates to frame
-   - Bolt Pololu 37D motors to plates
-   - Align with wheels
+4. **Install wheels**
+   - Press goBILDA 1309 hubs onto motor D-shafts
+   - Tighten hub pinch bolts
+   - Attach Wasteland wheels to hubs (M4 screws)
 
-5. **Install wheels**
-   - Attach hub adapters to motor shafts
-   - Mount wheels to hubs
+5. **Mount electronics**
+   - NUC on rubber standoffs (center)
+   - Arduino Mega near motor drivers
+   - MDD10A drivers near motors (short motor wires)
 
-6. **Wire motors**
-   - Connect motors to MDD10A drivers
-   - Connect encoders to controller
+6. **Wire power system**
+   - Fuse near battery
+   - DC-DC converters on frame
+   - E-stop accessible from outside
 
-7. **Mount electronics**
-   - NUC, drivers, power distribution
-   - Route and secure wiring
+7. **Wire motors**
+   - Motor power to MDD10A outputs
+   - PWM/DIR from Arduino to MDD10A inputs
+   - Encoders to Arduino digital pins
 
 8. **Test**
    - Power on, verify motor directions
-   - Test encoder feedback
-   - Calibrate if needed
+   - Test encoder counting
+   - Calibrate odometry
 
 ## ROS2 Integration
 
-### Motor Control Node
-```python
-# Uses Cytron MDD10A via GPIO PWM
-# Encoder feedback for odometry
-# Publishes: /odom
-# Subscribes: /cmd_vel
+### Motor Control Node (Arduino)
+```cpp
+// Arduino receives cmd_vel via serial
+// Converts to individual motor speeds (differential drive)
+// Reads encoders, sends odometry back to NUC
+
+// Serial protocol:
+// NUC → Arduino: "V,left_speed,right_speed\n"
+// Arduino → NUC: "O,left_ticks,right_ticks\n"
 ```
 
-### Encoder Specs (Pololu 37D)
+### ROS2 Nodes (NUC)
+```
+ros2_serial_bridge    - Arduino communication
+diff_drive_controller - cmd_vel to wheel speeds
+robot_localization    - sensor fusion (encoders + IMU + GPS)
+rplidar_ros          - lidar driver
+realsense_ros        - depth camera driver
+nav2                 - navigation stack
+slam_toolbox         - SLAM
+```
+
+### Encoder Specs (Pololu 37D 131:1)
 ```
 Counts per revolution: 64 CPR (motor shaft)
-Gear ratio: ~131:1
-Counts per wheel rev: 64 × 131 = 8,384 CPR
-Wheel circumference: 478mm
+Gear ratio: 131.25:1
+Counts per wheel rev: 64 × 131.25 = 8,400 CPR
+Wheel circumference: 606mm
 
-Resolution: 478mm / 8384 = 0.057mm per count
+Resolution: 606mm / 8400 = 0.072mm per count
+
+At max speed (76 RPM):
+  Ticks/sec = 76 × 8400 / 60 = 10,640 ticks/sec per motor
+  Arduino can handle this with interrupts
 ```
-
-High resolution odometry - excellent for ROS2 Nav2.
 
 ## Sensors
 
-### Lidar: RPLidar A1 (Recommended)
+### Lidar: RPLidar A1
 
 | Spec | Value |
 |------|-------|
 | Model | Slamtec RPLidar A1M8 |
 | Range | 0.15 - 12m |
 | Scan Rate | 5.5Hz |
-| Sample Rate | 8KHz |
-| Interface | USB (UART adapter included) |
+| Interface | USB |
 | Price | ~$99 |
 
 **Mounting:**
 ```
-Height: 10-15cm above deck
+Height: 15-20cm above deck (clears 7.6" wheels)
 Location: Center-front or center-top
 Clearance: 360° unobstructed view
-
-        [Lidar]  <- 10-15cm standoff
-           |
-+----------+----------+
-|       Deck          |
-+---------------------+
 ```
 
-**ROS2 Setup:**
-```bash
-# Install
-sudo apt install ros-jazzy-rplidar-ros
+### Depth Camera: Intel RealSense D435
 
-# Launch
-ros2 launch rplidar_ros rplidar_a1_launch.py
+| Spec | Value |
+|------|-------|
+| Resolution | 1280×720 |
+| Range | 0.2 - 10m |
+| Interface | USB 3.0 |
+| Price | ~$180 |
 
-# Publishes: /scan (sensor_msgs/LaserScan)
+### IMU: BNO055
+
+| Spec | Value |
+|------|-------|
+| Type | 9-DOF (accel + gyro + mag) |
+| Interface | I2C via FT232H USB adapter |
+| Price | ~$25 |
+
+### GPS: TN GPS with Compass (owned)
+
+| Spec | Value |
+|------|-------|
+| Interface | UART via FTDI USB adapter |
+| Features | GPS + magnetometer |
+
+## Motor Mount Design
+
+### Pololu 37D Mounting Pattern
+```
+Front view of motor:
+
+        ┌─────────┐
+        │  shaft  │
+        │    ○    │  <- 6mm D-shaft
+        │         │
+    ────┼────○────┼────  <- M3 mounting holes
+        │         │       0.875" (22.2mm) bolt circle
+        │    ○    │       6 holes, 60° apart
+        │         │
+    ────┼────○────┼────
+        │         │
+        └─────────┘
+            37mm diameter
 ```
 
-### Lidar Options Comparison
+### Mount Plate Design (SendCutSend)
+```
+Material: 3mm aluminum
+Size: ~60mm × 80mm per plate
 
-| Model | Range | Scan Rate | Price | Notes |
-|-------|-------|-----------|-------|-------|
-| RPLidar A1 | 12m | 5.5Hz | $99 | Best value, recommended |
-| RPLidar A2 | 16m | 10Hz | $300 | Brushless, faster, quieter |
-| RPLidar C1 | 12m | 10Hz | $80 | Newer budget option |
-| YDLidar X4 | 10m | 6Hz | $70 | Budget, less support |
+Features:
+- 3x M3 holes for motor (0.875" bolt circle)
+- 2x slots for T-slot mounting
+- Cutout for motor shaft
+```
 
-### Other Sensors (from quad inventory)
+## Safety Features
 
-| Sensor | Source | Use |
-|--------|--------|-----|
-| GPS | Flight controller | Outdoor waypoint navigation |
-| IMU | Flight controller | Orientation, sensor fusion |
-| Barometer | Flight controller | Altitude (optional) |
+| Feature | Purpose |
+|---------|---------|
+| 20A Fuse | Overcurrent protection |
+| E-Stop | Emergency motor cutoff |
+| LiPo Alarm | Low voltage warning |
+| Rubber standoffs | Vibration isolation for NUC |
 
-### Depth Camera (Optional Upgrade)
+---
 
-| Model | Price | Use Case |
-|-------|-------|----------|
-| Intel RealSense D435 | $180 | 3D obstacle detection |
-| OAK-D Lite | $150 | AI + depth |
-
-## Future Upgrades
-
-| Upgrade | Purpose | Est. Cost |
-|---------|---------|-----------|
-| Suspension | Rough terrain | $50-100 |
-| Larger wheels (8") | Ground clearance | $80-120 |
-| Brushless motors | More power | $200+ |
-| Weatherproofing | Outdoor use | $30-50 |
-| Depth camera | 3D perception | $150-200 |
+*Last updated: 2024-12-27*

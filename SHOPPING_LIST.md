@@ -11,7 +11,7 @@ Generated: 2024-12-27
 
 ---
 
-## TIER 1: ESSENTIAL (~$940)
+## TIER 1: ESSENTIAL (~$924)
 
 ### Drivetrain - $506
 
@@ -29,12 +29,14 @@ Generated: 2024-12-27
 | 4 | OpenBuilds V-Slot 20x20mm 1000mm | $60 | https://openbuildspartstore.com/v-slot-20x20-linear-rail/ |
 | 1 | OpenBuilds Hardware Kit (brackets, T-nuts) | $40 | https://openbuildspartstore.com/black-angle-corner-connector/ |
 
-### Frame Hardware - $50
+### Frame Hardware - $34
 
 | Qty | Item | Price | URL |
 |-----|------|-------|-----|
-| 4 | Motor Mount Plates (custom) | $40 | https://sendcutsend.com/ |
+| 2 | Pololu 37D L-Bracket (pair) | $24 | https://www.pololu.com/product/1084 |
 | 1 | Rubber Standoffs M3 (for NUC) | $10 | https://www.amazon.com/dp/B07PMVBK9G |
+
+*Note: Drill 2 holes per bracket to 5.5mm for M5 T-slot mounting*
 
 ### Sensors - $99
 
@@ -77,7 +79,7 @@ Generated: 2024-12-27
 | 1 | 22AWG Hookup Wire Kit | $8 | https://www.amazon.com/dp/B07TX6BX47 |
 | 1 | USB-A to USB-B Cable (for Arduino) | $4 | https://www.amazon.com/dp/B00NH11KIK |
 
-### **TIER 1 SUBTOTAL: ~$940**
+### **TIER 1 SUBTOTAL: ~$924**
 
 ---
 
@@ -112,19 +114,24 @@ Generated: 2024-12-27
 
 | Category | Cost |
 |----------|------|
-| Tier 1 (Essential) | ~$940 |
+| Tier 1 (Essential) | ~$924 |
 | Tier 2 (Enhanced) | ~$240 |
-| **TOTAL TO BUY** | **~$1180** |
+| **TOTAL TO BUY** | **~$1164** |
 
 ---
 
 ## ORDER BY VENDOR
 
-### Pololu - $284
+### Pololu - $308
 ```
 https://www.pololu.com/product/4756
 - 4x 131:1 Metal Gearmotor 37Dx73L mm 12V with 64 CPR Encoder
   @ $70.95 each = $283.80
+
+https://www.pololu.com/product/1084
+- 2x Stamped Aluminum L-Bracket Pair for 37D Motors
+  @ $11.95 each = $23.90
+  (Drill 2 holes per bracket to 5.5mm for M5 T-slot mounting)
 ```
 
 ### ServoCity - $160
@@ -148,14 +155,6 @@ https://openbuildspartstore.com/
 - Angle Corner Connectors
 - Tee Nuts, Drop-In (M5) x50
 - Low Profile Screws M5 x25
-```
-
-### SendCutSend - ~$40
-```
-https://sendcutsend.com/
-- Custom motor mount plates (need to design)
-- Material: 3mm Aluminum 6061
-- Qty: 4 plates
 ```
 
 ### Adafruit - $40

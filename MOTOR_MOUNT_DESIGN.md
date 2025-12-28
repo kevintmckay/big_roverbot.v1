@@ -1,5 +1,14 @@
 # Motor Mount Plate Design
 
+**UPDATE: Using Pololu L-Brackets instead of custom plates.**
+- Order: 2x Pololu Stamped L-Bracket pairs ($11.95 each) = $23.90
+- Link: https://www.pololu.com/product/1084
+- Modification: Drill 2 holes per bracket to 5.5mm for M5 T-slot mounting
+
+---
+
+## Original Custom Plate Design (for reference)
+
 Custom plates for mounting Pololu 37D motors to OpenBuilds 20x20 V-Slot extrusion.
 
 ## Specifications

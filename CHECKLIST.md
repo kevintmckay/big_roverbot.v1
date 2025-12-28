@@ -62,12 +62,11 @@
   - Communicates with NUC via USB serial
 - [x] ~~USB-UART adapter (for GPS)~~ - **Already owned** (FTDI FT232RL)
 
-### Frame Hardware (~$50)
+### Frame Hardware (~$34)
 
-- [ ] Motor mount plates (custom cut) - ~$40
-  - Link: https://sendcutsend.com/
-  - 4x plates to mount Pololu 37D to T-slot frame
-  - Need to design for 37mm motor diameter
+- [ ] Pololu 37D L-Bracket (2 pairs) - ~$24
+  - Link: https://www.pololu.com/product/1084
+  - Drill 2 holes per bracket to 5.5mm for M5 T-slot mounting
 - [ ] NUC mounting standoffs (rubber, vibration isolating) - ~$10
   - Search: "M3 rubber standoffs vibration"
 
@@ -86,7 +85,7 @@
 - [ ] Barrel jack 5.5x2.5mm (for NUC) - ~$5
 - [ ] Wire 14AWG (power) + 22AWG (signal) - ~$12
 
-**Tier 1 Subtotal: ~$912**
+**Tier 1 Subtotal: ~$896**
 
 ---
 

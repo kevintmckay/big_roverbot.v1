@@ -2,6 +2,22 @@
 
 Autonomous rover platform built on Intel NUC with ROS2.
 
+![RoverBot v1 Concept](rover.png)
+
+## Specs
+
+| Spec | Value |
+|------|-------|
+| Chassis | 24" x 12" T-slot aluminum |
+| Motors | Pololu 37D 131:1 (76 RPM) |
+| Wheels | 7.6" Wasteland (192mm) |
+| Speed | 1.5 mph |
+| Ground Clearance | ~4" |
+| Weight | ~8.3 kg |
+| Battery | 4S LiPo 8000mAh |
+| Runtime | ~1.8 hours |
+| Brain | Intel NUC (ROS2 Jazzy) |
+
 ## Hardware Summary
 
 | Component | Details |
@@ -87,10 +103,12 @@ Capabilities:
 | File | Purpose |
 |------|---------|
 | README.md | This overview |
-| ROS2_GUIDE.md | ROS2 concepts and getting started |
+| SHOPPING_LIST.md | Complete parts list with URLs |
+| CHECKLIST.md | Shopping checklist with status |
 | CHASSIS_BUILD.md | Custom 24"x12" T-slot chassis build |
-| SHOPPING.md | Bill of materials |
-| NEXT_PROJECTS.md | Future project ideas |
+| MOTOR_MOUNT_DESIGN.md | Motor mounting details |
+| ROS2_GUIDE.md | ROS2 concepts and getting started |
+| old-parts.md | Inventory of existing parts |
 
 ## Getting Started
 

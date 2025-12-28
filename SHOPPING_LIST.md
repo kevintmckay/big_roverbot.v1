@@ -6,7 +6,7 @@ Generated: 2024-12-27
 
 ## ⚠️ BEFORE ORDERING
 
-- [ ] **Verify 192mm Wasteland wheel hub pattern** (confirm goBILDA 16mm compatible)
+- [x] **Verify 192mm Wasteland wheel hub pattern** - CONFIRMED: goBILDA 16mm pattern compatible
 - [ ] **Confirm you have a 4S LiPo charger**
 
 ---

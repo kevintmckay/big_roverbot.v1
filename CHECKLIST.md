@@ -174,7 +174,7 @@
 
 ## Pre-Order Verification
 
-- [ ] Confirm 192mm Wasteland wheel hub pattern (goBILDA 16mm?)
+- [x] Confirm 192mm Wasteland wheel hub pattern - VERIFIED: goBILDA 16mm thru-holes
 - [ ] Check Pololu 37D mounting hole dimensions for motor plates
 - [x] ~~Verify TN GPS voltage levels~~ - Have FTDI adapters with 3.3V/5V selection
 

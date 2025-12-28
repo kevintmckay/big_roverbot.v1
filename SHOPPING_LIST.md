@@ -22,14 +22,30 @@ Generated: 2024-12-27
 | 4 | goBILDA 1309 Sonic Hub 6mm D-Bore | $32 | https://www.gobilda.com/1309-series-sonic-hub-6mm-d-bore/ |
 | 2 | Cytron MDD10A Dual Motor Driver | $30 | https://www.amazon.com/dp/B01N0XHZZ0 |
 
-### Frame - $100
+### Frame - $100 (or $40 PVC option)
+
+**OPTION A: T-Slot Aluminum - $100** (recommended)
 
 | Qty | Item | Price | URL |
 |-----|------|-------|-----|
 | 4 | OpenBuilds V-Slot 20x20mm 1000mm | $60 | https://openbuildspartstore.com/v-slot-20x20-linear-rail/ |
 | 1 | OpenBuilds Hardware Kit (brackets, T-nuts) | $40 | https://openbuildspartstore.com/black-angle-corner-connector/ |
 
-### Frame Hardware - $34
+**OPTION B: 1" PVC + Flat Bar - $40** (budget)
+
+| Qty | Item | Price | Source |
+|-----|------|-------|--------|
+| 1 | 1" Schedule 40 PVC 10' | $10 | Home Depot/Lowes |
+| 1 | Aluminum flat bar 1.5"x1/8" 36" | $8 | Home Depot/Lowes |
+| 1 | Aluminum angle 1"x1"x1/8" 36" | $7 | Home Depot/Lowes |
+| - | 3D printed connectors | $5 | ~100g PETG |
+| - | Hardware (M5, M4, M3 bolts) | $10 | Amazon |
+
+*See [PVC_FRAME_DESIGN.md](PVC_FRAME_DESIGN.md) for full build details*
+
+### Frame Hardware - $34 (T-slot) / $0 (PVC)
+
+**For T-Slot Option A:**
 
 | Qty | Item | Price | URL |
 |-----|------|-------|-----|
@@ -37,6 +53,8 @@ Generated: 2024-12-27
 | 1 | Rubber Standoffs M3 (for NUC) | $10 | https://www.amazon.com/dp/B07PMVBK9G |
 
 *Note: Drill 2 holes per bracket to 5.5mm for M5 T-slot mounting*
+
+**For PVC Option B:** Motor mounts included in flat bar cost above
 
 ### Sensors - $99
 
@@ -79,7 +97,7 @@ Generated: 2024-12-27
 | 1 | 22AWG Hookup Wire Kit | $8 | https://www.amazon.com/dp/B07TX6BX47 |
 | 1 | USB-A to USB-B Cable (for Arduino) | $4 | https://www.amazon.com/dp/B00NH11KIK |
 
-### **TIER 1 SUBTOTAL: ~$924**
+### **TIER 1 SUBTOTAL: ~$924 (T-slot) / ~$830 (PVC)**
 
 ---
 
@@ -112,13 +130,13 @@ Generated: 2024-12-27
 
 ## GRAND TOTAL
 
-| Category | Cost |
-|----------|------|
-| Tier 1 (Essential) | ~$924 |
-| Tier 2 (Enhanced) | ~$240 |
-| **TOTAL TO BUY** | **~$1164** |
-| 3D Print Savings | -$80 to -$120 |
-| **NET TOTAL** | **~$1044 - $1084** |
+| Category | T-Slot Frame | PVC Frame |
+|----------|--------------|-----------|
+| Tier 1 (Essential) | ~$924 | ~$830 |
+| Tier 2 (Enhanced) | ~$240 | ~$240 |
+| **TOTAL TO BUY** | **~$1164** | **~$1070** |
+| 3D Print Savings | -$80 to -$120 | -$80 to -$120 |
+| **NET TOTAL** | **~$1044 - $1084** | **~$950 - $990** |
 
 ---
 

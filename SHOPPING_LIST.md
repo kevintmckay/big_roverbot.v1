@@ -117,6 +117,43 @@ Generated: 2024-12-27
 | Tier 1 (Essential) | ~$924 |
 | Tier 2 (Enhanced) | ~$240 |
 | **TOTAL TO BUY** | **~$1164** |
+| 3D Print Savings | -$80 to -$120 |
+| **NET TOTAL** | **~$1044 - $1084** |
+
+---
+
+## 3D PRINTABLE PARTS (Prusa MK4S)
+
+Print these instead of buying to save ~$80-120. See [3D_PRINT_FILES.md](3D_PRINT_FILES.md) for STL links.
+
+### Mounts You'd Otherwise Buy
+
+| Part | Would Cost | Print Cost | Savings |
+|------|------------|------------|---------|
+| RPLidar A1 mount | $10-15 | ~$1 | $9-14 |
+| RealSense D435 mount | $15-20 | ~$1 | $14-19 |
+| BNO055 IMU mount | $5-10 | ~$0.50 | $4-10 |
+| GPS mast + mount | $15-20 | ~$2 | $13-18 |
+| Arduino Mega case | $10-15 | ~$1 | $9-14 |
+| Cytron MDD10A mounts (x2) | $15-20 | ~$1 | $14-19 |
+| Intel NUC mount | $15-20 | ~$2 | $13-18 |
+| E-stop button mount | $5-10 | ~$1 | $4-9 |
+| **Total** | **$90-130** | **~$10** | **$80-120** |
+
+### Optional: Print Instead of Buy
+
+| Part | Current Cost | Notes |
+|------|--------------|-------|
+| NUC rubber standoffs | $10 | Print in TPU instead |
+| Some T-slot brackets | ~$15 | Part of $40 hardware kit |
+
+### Recommended Print Materials
+
+| Material | Use For |
+|----------|---------|
+| PETG | Sensor mounts, motor driver mounts (heat resistant) |
+| PLA | Low-stress brackets, enclosures |
+| TPU | Vibration standoffs, grommets |
 
 ---
 

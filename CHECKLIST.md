@@ -2,7 +2,9 @@
 
 ## Already Owned
 
-- [x] Intel NUC (Celeron N5105, 32GB RAM, 2TB NVMe)
+- [x] Raspberry Pi 5 16GB - main computer
+- [x] Pi 5 Aluminum Case (passive cooling)
+- [x] Transcend ESD310C USB SSD - storage
 - [x] Zippy Flightmax 4S LiPo (8000mAh, 14.8V) - main battery
 - [x] Turnigy nano-tech 4S LiPo (1800mAh, 14.8V) - backup
 - [x] TN GPS with Compass - primary GPS
@@ -43,32 +45,30 @@
 - [ ] RPLidar A1 (12m, 5.5Hz) - ~$99
   - Link: https://www.amazon.com/dp/B07TJW5SXF
 
-### Power (~$50)
+### Power (~$33)
 
-- [ ] DC-DC Boost Converter 19V 5A (for NUC) - ~$25
-  - Search: "DC-DC boost converter 12V to 19V 5A"
-  - NOTE: Must be BOOST (step-up), 4S LiPo is only 14.8V!
 - [ ] DC-DC Step-down 12V 10A (for motors) - ~$15
   - Search: "DC-DC 12V 10A buck converter"
   - Or run motors direct from 4S battery (14.8V OK for 12V motors)
-- [ ] DC-DC Step-down 5V 3A (for sensors) - ~$8
-  - For Arduino, encoders, small sensors
+- [ ] DC-DC Step-down 5V 5A (for Pi 5) - ~$10
+  - Search: "DC-DC 5V 5A buck converter"
+- [ ] USB-C PD Trigger 5V - ~$8
+  - For clean Pi 5 power connection
 
 ### Motor Control Interface (~$25)
 
 - [ ] Arduino Mega 2560 or Teensy 4.1 - ~$25
   - Link: https://store.arduino.cc/products/arduino-mega-2560-rev3
-  - NUC has NO GPIO - need microcontroller for PWM/encoder
-  - Communicates with NUC via USB serial
+  - Pi 5 GPIO not ideal for real-time motor control
+  - Communicates with Pi via USB serial
 - [x] ~~USB-UART adapter (for GPS)~~ - **Already owned** (FTDI FT232RL)
 
-### Frame Hardware (~$34)
+### Frame Hardware (~$24)
 
 - [ ] Pololu 37D L-Bracket (2 pairs) - ~$24
   - Link: https://www.pololu.com/product/1084
   - Drill 2 holes per bracket to 5.5mm for M5 T-slot mounting
-- [ ] NUC mounting standoffs (rubber, vibration isolating) - ~$10
-  - Search: "M3 rubber standoffs vibration"
+- [x] ~~Pi 5 mount~~ - 3D printed or use aluminum case directly
 
 ### Safety (~$25)
 
@@ -79,13 +79,12 @@
 - [ ] LiPo battery alarm/monitor - ~$7
   - Prevents over-discharge, plugs into balance lead
 
-### Wiring/Misc (~$25)
+### Wiring/Misc (~$20)
 
 - [ ] XT60 connectors (male/female pairs) - ~$8
-- [ ] Barrel jack 5.5x2.5mm (for NUC) - ~$5
 - [ ] Wire 14AWG (power) + 22AWG (signal) - ~$12
 
-**Tier 1 Subtotal: ~$896**
+**Tier 1 Subtotal: ~$864**
 
 ---
 
@@ -114,10 +113,10 @@
 
 | Category | Status | Cost |
 |----------|--------|------|
-| Already owned | Done | $0 (saved ~$128) |
-| Tier 1 (Essential) | To buy | ~$912 |
+| Already owned | Done | $0 (saved ~$140) |
+| Tier 1 (Essential) | To buy | ~$864 |
 | Tier 2 (Enhanced) | To buy | ~$220 |
-| **Total** | | **~$1132** |
+| **Total** | | **~$1084** |
 
 ### Selected Build (Option B)
 
@@ -141,14 +140,14 @@
 
 ## Architecture Notes
 
-**NUC has NO GPIO** - requires microcontroller interface:
+**Pi 5 GPIO not ideal for real-time motor control** - using Arduino:
 
 ```
-                         USB Serial
-    Intel NUC (ROS2) ←──────────────→ Arduino Mega
-                                           │
-                                      PWM/DIR → Cytron MDD10A → Motors
-                                      Encoder inputs (4x)
+                          USB Serial
+    Raspberry Pi 5 (ROS2) ←────────────→ Arduino Mega
+                                              │
+                                         PWM/DIR → Cytron MDD10A → Motors
+                                         Encoder inputs (4x)
 
     USB-UART ──→ TN GPS
     USB ──────→ RPLidar A1
@@ -162,9 +161,8 @@
          │
          ├──→ Fuse (20A)
          │         │
-         │         ├──→ Boost 19V ──→ NUC
          │         ├──→ Buck 12V ───→ Motors (via MDD10A)
-         │         └──→ Buck 5V ────→ Arduino, sensors
+         │         └──→ Buck 5V 5A ─→ Pi 5 (USB-C) → Arduino
          │
          └──→ E-Stop switch (motor power only)
 ```

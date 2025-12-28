@@ -1,6 +1,6 @@
 # RoverBot v1
 
-Autonomous rover platform built on Intel NUC with ROS2.
+Autonomous rover platform built on Raspberry Pi 5 with ROS2.
 
 ![RoverBot v1 Concept](rover.png)
 
@@ -15,44 +15,21 @@ Autonomous rover platform built on Intel NUC with ROS2.
 | Ground Clearance | ~4" |
 | Weight | ~8.3 kg |
 | Battery | 4S LiPo 8000mAh |
-| Runtime | ~1.8 hours |
-| Brain | Intel NUC (ROS2 Jazzy) |
+| Runtime | ~2+ hours |
+| Brain | Raspberry Pi 5 16GB (ROS2 Jazzy) |
 
 ## Hardware Summary
 
 | Component | Details |
 |-----------|---------|
-| CPU | Intel Celeron N5105 @ 2.00GHz (4 cores, 2.9GHz boost) |
-| RAM | 32 GB DDR4 |
-| Storage | Intel SSDPEKNU020TZ NVMe SSD (1.9 TB) |
-| GPU | Intel UHD Graphics (Jasper Lake, OpenVINO capable) |
-| Motherboard | Intel NUC11ATBC4 (M53051-400) |
-| Architecture | x86_64 with VT-x virtualization |
-| Power | 10-15W typical |
-| Size | ~117 x 112 x 37 mm |
-
-## Comparison: NUC vs Pi 5
-
-| Spec | Pi 5 (Rock Crawler) | Intel NUC (RoverBot v1) |
-|------|------------------|----------------------|
-| CPU | Cortex-A76 @ 2.4GHz | Celeron N5105 @ 2.9GHz |
-| Cores | 4 | 4 |
-| RAM | 16GB | 32GB |
-| Storage | 256GB USB | 2TB NVMe |
-| GPU Accel | None (Hailo optional) | Intel UHD + OpenVINO |
-| Power | 5W | 10-15W |
-| OS | Debian ARM64 | Ubuntu x86_64 |
-| Best For | Small crawler, edge | Larger robot, ROS2 |
-
-## AI Inference Performance
-
-Using OpenVINO acceleration on Intel UHD Graphics:
-
-| Model | CPU Only | OpenVINO GPU | Pi 5 (reference) |
-|-------|----------|--------------|------------------|
-| YOLOv8n 320 | ~50ms (20 FPS) | ~30ms (33 FPS) | 130ms (8 FPS) |
-| YOLOv8n 640 | ~150ms (7 FPS) | ~80ms (12 FPS) | 457ms (2 FPS) |
-| YOLOv8s 640 | ~400ms (2.5 FPS) | ~200ms (5 FPS) | Too slow |
+| CPU | Cortex-A76 @ 2.4GHz (4 cores) |
+| RAM | 16 GB LPDDR4X |
+| Storage | Transcend ESD310C USB SSD |
+| GPU | VideoCore VII (Vulkan 1.2) |
+| Cooling | Aluminum passive case |
+| Architecture | ARM64 |
+| Power | ~8W typical |
+| Size | 85 x 56 x 20 mm (+ case) |
 
 ## Architecture
 
@@ -60,22 +37,26 @@ Indoor/outdoor rover with full autonomous navigation:
 
 ```
 +------------------+
-|    Intel NUC     |  <-- Mounted on platform
+| Raspberry Pi 5   |  <-- Mounted in aluminum case
 |  +------------+  |
-|  | 2D Lidar   |  |  <-- RPLidar A1/A2
+|  | 2D Lidar   |  |  <-- RPLidar A1
 |  +------------+  |
 |  | Depth Cam  |  |  <-- Intel RealSense D435
 |  +------------+  |
-|  | IMU        |  |  <-- BNO055 or MPU9250
+|  | IMU        |  |  <-- BNO055
 |  +------------+  |
 +------------------+
         |
 +------------------+
-| Motor Controller |  <-- ODrive, Roboclaw, or similar
+| Arduino Mega     |  <-- Motor control, encoders
 +------------------+
         |
 +------------------+
-| 4WD/6WD Chassis  |  <-- 30cm+ platform
+| Cytron MDD10A x2 |  <-- Dual motor drivers
++------------------+
+        |
++------------------+
+| 4WD Chassis      |  <-- 24"x12" platform
 +------------------+
 ```
 
@@ -112,12 +93,8 @@ Capabilities:
 
 ## Getting Started
 
-1. Install Ubuntu 24.04 on NUC
-2. Install ROS2 Jazzy (see ROS2_GUIDE.md)
-3. Acquire hardware (see SHOPPING.md)
+1. Install Ubuntu 24.04 or Raspberry Pi OS on Pi 5
+2. Install ROS2 Jazzy (see ROS2_SLAM_STACK.md)
+3. Acquire hardware (see SHOPPING_LIST.md)
 4. Build chassis (see CHASSIS_BUILD.md)
 5. Integrate and test
-
-## Related Project
-
-See `/home/kevin/robot/` for Pi 5 Rock Crawler project

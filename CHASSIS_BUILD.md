@@ -44,7 +44,7 @@ Good torque for hills and rough terrain.
 
 | Component | Weight |
 |-----------|--------|
-| Intel NUC | 0.5 kg |
+| Raspberry Pi 5 | 0.1 kg |
 | 4S LiPo 8000mAh | 0.8 kg |
 | Frame + plates | 2.5 kg |
 | Motors (4x) | 0.8 kg |
@@ -68,7 +68,7 @@ Wheel capacity: 4 × 6kg = 24kg ✓
 | Item | Qty | Source | Est. Price |
 |------|-----|--------|------------|
 | Motor mount plates (custom cut) | 4 | SendCutSend | $40 |
-| NUC rubber standoffs (M3) | 1 set | Amazon | $10 |
+| Pi 5 mounting hardware | 1 set | 3D printed | $0 |
 
 ### Drivetrain (~$506)
 
@@ -97,7 +97,7 @@ Wheel capacity: 4 × 6kg = 24kg ✓
 ```
           24" (610mm)
 +-------------------------------+
-|  [NUC]    [Lidar]    [GPS]    |
+|  [Pi5]    [Lidar]    [GPS]    |
 |                               |  12"
 |  [Arduino] [Batt] [Drivers]   |  (305mm)
 |                               |
@@ -112,7 +112,7 @@ Wheel capacity: 4 × 6kg = 24kg ✓
 ### Side View
 ```
         +---------------------+
-        |    Electronics      |  <- NUC, Arduino, drivers
+        |    Electronics      |  <- Pi 5, Arduino, drivers
         +---------------------+
            |               |
         [=====]         [=====]   <- 7.6" wheels (192mm)
@@ -186,30 +186,27 @@ Encoder Inputs (8 pins):
          │
          ├──→ 20A Fuse
          │         │
-         │         ├──→ Boost 19V 5A ──→ Intel NUC (barrel jack)
-         │         │
          │         ├──→ Buck 12V 10A ──→ MDD10A #1 VIN ──→ M1, M3
          │         │                 └──→ MDD10A #2 VIN ──→ M2, M4
          │         │
-         │         └──→ Buck 5V 3A ───→ Arduino Mega
+         │         └──→ Buck 5V 5A ───→ Raspberry Pi 5 (USB-C)
+         │                           ├──→ Arduino Mega (USB from Pi)
          │                           └──→ Encoder Vcc
          │
          └──→ E-Stop ──→ Motor power cutoff
-
-Note: 4S LiPo is 14.8V - need BOOST converter for 19V NUC!
 ```
 
 ### Power Budget
 ```
-NUC:           15W typical (19V × 0.8A)
+Pi 5:          8W typical (5V × 1.6A)
 Motors (4x):   48W peak (12V × 1A each typical)
-Arduino:       0.5W
+Arduino:       0.5W (powered via Pi USB)
 Sensors:       2W
 ─────────────────────────
-Total:         ~65W typical, ~100W peak
+Total:         ~58W typical, ~85W peak
 
 Runtime: 8000mAh × 14.8V = 118Wh
-         118Wh / 65W = ~1.8 hours typical
+         118Wh / 58W = ~2 hours typical
 ```
 
 ## Control Architecture
@@ -217,7 +214,7 @@ Runtime: 8000mAh × 14.8V = 118Wh
 ### System Overview
 ```
                             USB Serial
-    Intel NUC (ROS2) ←─────────────────→ Arduino Mega 2560
+    Raspberry Pi 5 (ROS2) ←────────────→ Arduino Mega 2560
          │                                      │
          │                                 PWM/DIR signals
          │                                      │
@@ -234,11 +231,11 @@ Runtime: 8000mAh × 14.8V = 118Wh
 ```
 
 ### Why Arduino?
-Intel NUC has **NO GPIO pins**. Arduino Mega provides:
+Pi 5 GPIO is limited and not ideal for real-time motor control. Arduino Mega provides:
 - PWM outputs for motor speed control
 - Digital outputs for direction control
 - Interrupt-capable inputs for encoder counting
-- USB serial communication with NUC
+- USB serial communication with Pi 5
 
 ## Assembly Steps
 
@@ -262,7 +259,7 @@ Intel NUC has **NO GPIO pins**. Arduino Mega provides:
    - Attach Wasteland wheels to hubs (M4 screws)
 
 5. **Mount electronics**
-   - NUC on rubber standoffs (center)
+   - Pi 5 in aluminum case (center)
    - Arduino Mega near motor drivers
    - MDD10A drivers near motors (short motor wires)
 
@@ -287,14 +284,14 @@ Intel NUC has **NO GPIO pins**. Arduino Mega provides:
 ```cpp
 // Arduino receives cmd_vel via serial
 // Converts to individual motor speeds (differential drive)
-// Reads encoders, sends odometry back to NUC
+// Reads encoders, sends odometry back to Pi
 
 // Serial protocol:
-// NUC → Arduino: "V,left_speed,right_speed\n"
-// Arduino → NUC: "O,left_ticks,right_ticks\n"
+// Pi → Arduino: "V,left_speed,right_speed\n"
+// Arduino → Pi: "O,left_ticks,right_ticks\n"
 ```
 
-### ROS2 Nodes (NUC)
+### ROS2 Nodes (Pi 5)
 ```
 ros2_serial_bridge    - Arduino communication
 diff_drive_controller - cmd_vel to wheel speeds
@@ -400,7 +397,7 @@ Features:
 | 20A Fuse | Overcurrent protection |
 | E-Stop | Emergency motor cutoff |
 | LiPo Alarm | Low voltage warning |
-| Rubber standoffs | Vibration isolation for NUC |
+| Aluminum case | Passive cooling for Pi 5 |
 
 ---
 

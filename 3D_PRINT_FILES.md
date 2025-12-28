@@ -81,17 +81,17 @@ STL files for mounting components to the RoverBot v1 frame.
 
 ---
 
-## Intel NUC Mount
+## Raspberry Pi 5 Mount
 
 | Design | Link | Notes |
 |--------|------|-------|
-| NUC VESA Mount | [Printables](https://www.printables.com/model/30356-intel-nuc-vesa-mount) | Adapts 85mm M3 to VESA pattern |
-| NUC VESA with screws | [Printables](https://www.printables.com/model/82377-intel-nuc-vesa-with-screws) | Fits all square NUCs, includes Fusion 360 source |
-| NUC VESA Adapter (honeycomb) | [Printables](https://www.printables.com/model/474237-intel-nuc-vesa-adapter) | Solid or honeycomb versions |
-| NUC Wall Mount | [Thingiverse](https://www.thingiverse.com/thing:2815177) | 85mm holes, rotatable |
-| All NUC Designs | [Printables Tag](https://www.printables.com/tag/intelnuc) | Browse all options |
+| Pi 5 T-slot 2020 Mount | [Printables](https://www.printables.com/model/623847-raspberry-pi-5-2020-extrusion-mount) | Direct mount to 20x20 V-slot |
+| Pi 5 Case with VESA | [Printables](https://www.printables.com/model/617481-raspberry-pi-5-case-with-vesa-mount) | VESA pattern + T-slot adapter |
+| Pi 5 DIN Rail Mount | [Printables](https://www.printables.com/model/632458-raspberry-pi-5-din-rail-mount) | For electronics bay organization |
+| Pi 5 Stackable Case | [Printables](https://www.printables.com/model/614849-raspberry-pi-5-case-stackable) | Compact, good airflow |
+| All Pi 5 Designs | [Printables Tag](https://www.printables.com/search/models?q=raspberry%20pi%205%20mount) | Browse all options |
 
-**Mounting notes:** Standard 85mm VESA pattern with M3 holes. Add T-slot adapter plate or use VHB tape.
+**Mounting notes:** Pi 5 uses 58x49mm hole pattern with M2.5 screws. User has aluminum case - may need adapter plate for T-slot.
 
 ---
 
@@ -118,7 +118,7 @@ STL files for mounting components to the RoverBot v1 frame.
 | GPS mast + mount | $15-20 | ~$2 filament |
 | Arduino case | $10-15 | ~$1 filament |
 | MDD10A mounts (x2) | $15-20 | ~$1 filament |
-| NUC mount | $15-20 | ~$2 filament |
+| Pi 5 mount/adapter | $10-15 | ~$1 filament |
 | E-stop mount | $5-10 | ~$1 filament |
 | **Total** | **~$90-130** | **~$10 filament** |
 
@@ -130,7 +130,7 @@ STL files for mounting components to the RoverBot v1 frame.
 |----------|---------|
 | **PETG** | Sensor mounts, motor driver mounts (heat resistance) |
 | **PLA** | Low-stress brackets, cable clips |
-| **TPU** | NUC vibration standoffs, grommets |
+| **TPU** | Pi 5 vibration standoffs, grommets |
 | **ABS** | High-stress outdoor parts (optional) |
 
 ### Print Settings

@@ -43,14 +43,13 @@ Generated: 2024-12-27
 
 *See [PVC_FRAME_DESIGN.md](PVC_FRAME_DESIGN.md) for full build details*
 
-### Frame Hardware - $34 (T-slot) / $0 (PVC)
+### Frame Hardware - $24 (T-slot) / $0 (PVC)
 
 **For T-Slot Option A:**
 
 | Qty | Item | Price | URL |
 |-----|------|-------|-----|
 | 2 | Pololu 37D L-Bracket (pair) | $24 | https://www.pololu.com/product/1084 |
-| 1 | Rubber Standoffs M3 (for NUC) | $10 | https://www.amazon.com/dp/B07PMVBK9G |
 
 *Note: Drill 2 holes per bracket to 5.5mm for M5 T-slot mounting*
 
@@ -70,13 +69,13 @@ Generated: 2024-12-27
 
 *Alternative:* https://www.amazon.com/dp/B0046AMGW0
 
-### Power System - $60
+### Power System - $45
 
 | Qty | Item | Price | URL |
 |-----|------|-------|-----|
-| 1 | Boost Converter 10-32V to 19V 5A | $25 | https://www.amazon.com/dp/B089JYBVP4 |
 | 1 | Buck Converter 12V 10A | $15 | https://www.amazon.com/dp/B07VVXF7YX |
-| 1 | Buck Converter 5V 3A | $8 | https://www.amazon.com/dp/B08JZ5FVLC |
+| 1 | Buck Converter 5V 5A (for Pi 5) | $10 | https://www.amazon.com/dp/B09VY3WQ61 |
+| 1 | USB-C PD Trigger 5V (Pi power) | $8 | https://www.amazon.com/dp/B0BFOG5WLM |
 | 1 | Power Distribution Block 12V | $12 | https://www.amazon.com/dp/B08G8PPGLR |
 
 ### Safety - $25
@@ -97,7 +96,7 @@ Generated: 2024-12-27
 | 1 | 22AWG Hookup Wire Kit | $8 | https://www.amazon.com/dp/B07TX6BX47 |
 | 1 | USB-A to USB-B Cable (for Arduino) | $4 | https://www.amazon.com/dp/B00NH11KIK |
 
-### **TIER 1 SUBTOTAL: ~$924 (T-slot) / ~$830 (PVC)**
+### **TIER 1 SUBTOTAL: ~$899 (T-slot) / ~$815 (PVC)**
 
 ---
 
@@ -114,11 +113,13 @@ Generated: 2024-12-27
 
 ---
 
-## ALREADY OWNED (Value: ~$430)
+## ALREADY OWNED (Value: ~$270)
 
 | Item | Est. Value |
 |------|------------|
-| Intel NUC (N5105, 32GB, 2TB) | $300 |
+| Raspberry Pi 5 16GB | $90 |
+| Pi 5 Aluminum Case (passive cooling) | $20 |
+| Transcend ESD310C USB SSD | $30 |
 | Zippy 8000mAh 4S LiPo | $60 |
 | Turnigy 1800mAh 4S LiPo | $30 |
 | TN GPS with Compass | $20 |
@@ -132,11 +133,11 @@ Generated: 2024-12-27
 
 | Category | T-Slot Frame | PVC Frame |
 |----------|--------------|-----------|
-| Tier 1 (Essential) | ~$924 | ~$830 |
+| Tier 1 (Essential) | ~$899 | ~$815 |
 | Tier 2 (Enhanced) | ~$240 | ~$240 |
-| **TOTAL TO BUY** | **~$1164** | **~$1070** |
+| **TOTAL TO BUY** | **~$1139** | **~$1055** |
 | 3D Print Savings | -$80 to -$120 | -$80 to -$120 |
-| **NET TOTAL** | **~$1044 - $1084** | **~$950 - $990** |
+| **NET TOTAL** | **~$1019 - $1059** | **~$935 - $975** |
 
 ---
 
@@ -154,7 +155,7 @@ Print these instead of buying to save ~$80-120. See [3D_PRINT_FILES.md](3D_PRINT
 | GPS mast + mount | $15-20 | ~$2 | $13-18 |
 | Arduino Mega case | $10-15 | ~$1 | $9-14 |
 | Cytron MDD10A mounts (x2) | $15-20 | ~$1 | $14-19 |
-| Intel NUC mount | $15-20 | ~$2 | $13-18 |
+| Raspberry Pi 5 mount | $10-15 | ~$1 | $9-14 |
 | E-stop button mount | $5-10 | ~$1 | $4-9 |
 | **Total** | **$90-130** | **~$10** | **$80-120** |
 
@@ -162,7 +163,7 @@ Print these instead of buying to save ~$80-120. See [3D_PRINT_FILES.md](3D_PRINT
 
 | Part | Current Cost | Notes |
 |------|--------------|-------|
-| NUC rubber standoffs | $10 | Print in TPU instead |
+| Pi 5 vibration standoffs | $5 | Print in TPU instead |
 | Some T-slot brackets | ~$15 | Part of $40 hardware kit |
 
 ### Recommended Print Materials
@@ -227,7 +228,7 @@ https://www.intelrealsense.com/depth-camera-d435/
 - 1x Intel RealSense Depth Camera D435 = $179.00
 ```
 
-### Amazon - ~$345
+### Amazon - ~$310
 ```
 Motors/Drivers:
 - https://www.amazon.com/dp/B01N0XHZZ0 - Cytron MDD10A x2 = $30
@@ -239,9 +240,9 @@ Control:
 - https://www.amazon.com/dp/B0046AMGW0 - Arduino Mega 2560 = $25
 
 Power:
-- https://www.amazon.com/dp/B089JYBVP4 - 19V Boost Converter = $25
 - https://www.amazon.com/dp/B07VVXF7YX - 12V Buck Converter = $15
-- https://www.amazon.com/dp/B08JZ5FVLC - 5V Buck Converter = $8
+- https://www.amazon.com/dp/B09VY3WQ61 - 5V 5A Buck Converter = $10
+- https://www.amazon.com/dp/B0BFOG5WLM - USB-C PD Trigger 5V = $8
 - https://www.amazon.com/dp/B08G8PPGLR - Power Distribution = $12
 
 Safety:
@@ -257,7 +258,6 @@ Wiring:
 - https://www.amazon.com/dp/B00NH11KIK - USB Cable = $4
 
 Hardware:
-- https://www.amazon.com/dp/B07PMVBK9G - Rubber Standoffs = $10
 - https://www.amazon.com/dp/B00JX1ZS5O - USB Hub = $20
 ```
 
@@ -275,7 +275,7 @@ Hardware:
 | Weight | ~8.3 kg |
 | Battery | 4S LiPo 8000mAh |
 | Runtime | ~1.8 hours |
-| Brain | Intel NUC (ROS2 Jazzy) |
+| Brain | Raspberry Pi 5 16GB (ROS2 Jazzy) |
 
 ---
 

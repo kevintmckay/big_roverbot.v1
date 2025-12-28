@@ -64,7 +64,7 @@ Alternative low-cost frame using 1" PVC pipe, 3D printed connectors, and aluminu
 | 8 | Corner connector | PETG | Frame corners |
 | 4 | T-connector | PETG | Cross brace joints |
 | 4 | Motor mount clamp | PETG | Clamps flat bar to PVC |
-| 4 | Pipe clamp (NUC/electronics) | PETG | Component mounting |
+| 4 | Pipe clamp (Pi 5/electronics) | PETG | Component mounting |
 
 ### Hardware - ~$10
 
@@ -316,15 +316,15 @@ Total: 114" used, 6" waste
 
 ## Component Mounting
 
-### NUC Mount
+### Pi 5 Mount
 
 ```
-    Print a flat platform that clamps to both cross braces:
+    Pi 5 in aluminum case clamps to cross braces:
 
     ════════════════════════════  Cross brace 1
          │                  │
          │   ┌──────────┐   │
-         │   │   NUC    │   │     Platform with rubber standoffs
+         │   │   Pi 5   │   │     Aluminum case provides cooling
          │   └──────────┘   │
          │                  │
     ════════════════════════════  Cross brace 2
@@ -339,7 +339,7 @@ Use pipe clamps (printed) that grip the PVC and provide mounting holes:
 | RPLidar A1 | Front rail, center, elevated |
 | RealSense D435 | Front rail, next to lidar |
 | GPS | Rear rail, on printed mast |
-| IMU | Center platform, with NUC |
+| IMU | Center platform, with Pi 5 |
 
 ### Electronics Tray
 
@@ -362,7 +362,7 @@ Use pipe clamps (printed) that grip the PVC and provide mounting holes:
 ```
     Weight distribution:
 
-    NUC + electronics: ~1.5 kg (center)
+    Pi 5 + electronics: ~1.0 kg (center)
     Battery: ~0.8 kg (center-rear)
     Motors: ~0.6 kg (corners)
     Sensors: ~0.3 kg (front)
@@ -412,7 +412,7 @@ Use pipe clamps (printed) that grip the PVC and provide mounting holes:
 | t_connector.stl | 4 | 3-way for cross braces |
 | motor_mount_clamp.stl | 4 | Holds flat bar to PVC |
 | pipe_clamp_small.stl | 4 | For sensors |
-| pipe_clamp_large.stl | 2 | For NUC platform |
+| pipe_clamp_large.stl | 2 | For Pi 5 platform |
 | electronics_tray.stl | 1 | Sits on cross braces |
 | gps_mast.stl | 1 | 150mm elevated mount |
 

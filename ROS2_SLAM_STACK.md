@@ -11,8 +11,8 @@ Complete SLAM and navigation stack for RoverBot v1.
 | IMU | Adafruit BNO055 | `/imu/data` (via Arduino) |
 | GPS | TN GPS + Compass | `/gps/fix`, `/gps/heading` |
 | Motors | Pololu 37D w/encoders | `/wheel_odom` (via Arduino) |
-| Controller | Arduino Mega | USB serial to NUC |
-| Brain | Intel NUC (Jazzy) | All ROS2 nodes |
+| Controller | Arduino Mega | USB serial to Pi |
+| Brain | Raspberry Pi 5 16GB (Jazzy) | All ROS2 nodes |
 
 ---
 
@@ -1015,7 +1015,7 @@ void loop() {
 
 ### Option B: micro-ROS (recommended for ROS2)
 
-Uses micro-ROS agent on NUC to bridge Arduino to ROS2 natively.
+Uses micro-ROS agent on Pi to bridge Arduino to ROS2 natively.
 
 ```bash
 # Run micro-ROS agent

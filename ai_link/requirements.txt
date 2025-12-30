@@ -1,0 +1,10 @@
+# AI-Link dependencies
+
+# Async HTTP client
+aiohttp>=3.9.0
+
+# For ROS2 integration (install via rosdep)
+# rclpy
+# std_msgs
+# sensor_msgs
+# std_srvs

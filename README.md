@@ -3,6 +3,7 @@
 Autonomous rover platform with on-device ROS2 and offloaded AI reasoning via encrypted WiFi link to a local GPU server.
 
 ![RoverBot v1 Concept](rover.png)
+![RoverBot v1 Render](rover2.png)
 
 ## Specs
 

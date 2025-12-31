@@ -1,6 +1,6 @@
 # Future Project Ideas
 
-Alternative uses for the Intel NUC platform after RoverBot v1.
+Ideas for repurposing the Intel NUC (N5105, 32GB RAM) - not used in RoverBot v1 (uses Pi 5 instead).
 
 ## Crawler Fleet Controller
 

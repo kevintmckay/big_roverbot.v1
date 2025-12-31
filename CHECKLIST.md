@@ -29,7 +29,7 @@
 - [ ] goBILDA 1309 Series Sonic Hub 6mm D-Bore (x4) - ~$32
   - Link: https://www.gobilda.com/1309-series-sonic-hub-6mm-d-bore/
   - Connects Pololu D-shaft to Wasteland wheel (16mm pattern)
-  - ⚠️ VERIFY: Confirm 192mm Wasteland uses 16mm goBILDA pattern before ordering!
+  - ✓ VERIFIED: 192mm Wasteland uses 16mm goBILDA pattern
 
 **Specs: 1.5 mph top speed, ~4" ground clearance, best torque for hills**
 

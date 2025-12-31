@@ -274,7 +274,7 @@ Hardware:
 | Ground Clearance | ~4" |
 | Weight | ~8.3 kg |
 | Battery | 4S LiPo 8000mAh |
-| Runtime | ~1.8 hours |
+| Runtime | ~2 hours |
 | Brain | Raspberry Pi 5 16GB (ROS2 Jazzy) |
 
 ---

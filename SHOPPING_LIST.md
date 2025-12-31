@@ -22,7 +22,7 @@ Generated: 2024-12-27
 | 4 | goBILDA 1309 Sonic Hub 6mm D-Bore | $32 | https://www.gobilda.com/1309-series-sonic-hub-6mm-d-bore/ |
 | 2 | Cytron MDD10A Dual Motor Driver | $30 | https://www.amazon.com/dp/B01N0XHZZ0 |
 
-### Frame - $100 (or $40 PVC option)
+### Frame - $100 / $40 PVC / $25 Al Tube
 
 **OPTION A: T-Slot Aluminum - $100** (recommended)
 
@@ -43,7 +43,26 @@ Generated: 2024-12-27
 
 *See [PVC_FRAME_DESIGN.md](PVC_FRAME_DESIGN.md) for full build details*
 
-### Frame Hardware - $24 (T-slot) / $0 (PVC)
+**OPTION C: Aluminum Square Tube + Printed Brackets - $25** (lightest)
+
+| Qty | Item | Price | Source |
+|-----|------|-------|--------|
+| 2 | 1"x1" Al square tube 1/16" wall 8ft | $15 | Home Depot/Metal supplier |
+| - | 3D printed corner brackets (4) | $3 | ~120g PETG |
+| - | 3D printed motor mounts (4) | $2 | ~80g PETG |
+| - | M5 bolts + nuts | $5 | Amazon |
+
+*Cuts: 2x 24" rails, 2x 12" cross members, 4x 6" motor extensions (~10ft total)*
+
+Frame comparison:
+
+| Option | Cost | Weight | Rigidity | Adjustability |
+|--------|------|--------|----------|---------------|
+| A: T-Slot | $100 | 2.5 kg | Best | Easy |
+| B: PVC | $40 | 0.5 kg | Good | Fixed |
+| C: Al Tube | $25 | 0.8 kg | Very Good | Fixed |
+
+### Frame Hardware - $24 (T-slot) / $0 (PVC/Al Tube)
 
 **For T-Slot Option A:**
 
@@ -54,6 +73,8 @@ Generated: 2024-12-27
 *Note: Drill 2 holes per bracket to 5.5mm for M5 T-slot mounting*
 
 **For PVC Option B:** Motor mounts included in flat bar cost above
+
+**For Al Tube Option C:** Motor mounts are 3D printed (included above)
 
 ### Sensors - $99
 
@@ -96,7 +117,7 @@ Generated: 2024-12-27
 | 1 | 22AWG Hookup Wire Kit | $8 | https://www.amazon.com/dp/B07TX6BX47 |
 | 1 | USB-A to USB-B Cable (for Arduino) | $4 | https://www.amazon.com/dp/B00NH11KIK |
 
-### **TIER 1 SUBTOTAL: ~$899 (T-slot) / ~$815 (PVC)**
+### **TIER 1 SUBTOTAL: ~$899 (T-slot) / ~$815 (PVC) / ~$800 (Al Tube)**
 
 ---
 
@@ -131,13 +152,13 @@ Generated: 2024-12-27
 
 ## GRAND TOTAL
 
-| Category | T-Slot Frame | PVC Frame |
-|----------|--------------|-----------|
-| Tier 1 (Essential) | ~$899 | ~$815 |
-| Tier 2 (Enhanced) | ~$240 | ~$240 |
-| **TOTAL TO BUY** | **~$1139** | **~$1055** |
-| 3D Print Savings | -$80 to -$120 | -$80 to -$120 |
-| **NET TOTAL** | **~$1019 - $1059** | **~$935 - $975** |
+| Category | T-Slot Frame | PVC Frame | Al Tube Frame |
+|----------|--------------|-----------|---------------|
+| Tier 1 (Essential) | ~$899 | ~$815 | ~$800 |
+| Tier 2 (Enhanced) | ~$240 | ~$240 | ~$240 |
+| **TOTAL TO BUY** | **~$1139** | **~$1055** | **~$1040** |
+| 3D Print Savings | -$80 to -$120 | -$80 to -$120 | -$75 to -$115 |
+| **NET TOTAL** | **~$1019 - $1059** | **~$935 - $975** | **~$925 - $965** |
 
 ---
 

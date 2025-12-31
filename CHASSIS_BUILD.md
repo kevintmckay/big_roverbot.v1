@@ -1,6 +1,12 @@
 # Custom Rover Chassis Build
 
-24" x 12" aluminum T-slot frame with Pololu motors.
+24" x 12" frame with Pololu motors. Three frame options available:
+
+| Option | Cost | Weight | Notes |
+|--------|------|--------|-------|
+| T-Slot Aluminum | $100 | 2.5 kg | Most adjustable, recommended |
+| PVC + Flat Bar | $40 | 0.5 kg | Budget option, see PVC_FRAME_DESIGN.md |
+| Al Square Tube | $25 | 0.8 kg | Lightest rigid option, printed brackets |
 
 ## Specifications
 
@@ -42,28 +48,40 @@ Good torque for hills and rough terrain.
 
 ### Weight Budget
 
-| Component | Weight |
-|-----------|--------|
-| Raspberry Pi 5 | 0.1 kg |
-| 4S LiPo 8000mAh | 0.8 kg |
-| Frame + plates | 2.5 kg |
-| Motors (4x) | 0.8 kg |
-| Wheels (4x 192mm) | 3.2 kg |
-| Electronics | 0.5 kg |
-| **Total** | **~8.3 kg** |
+| Component | T-Slot | PVC | Al Tube |
+|-----------|--------|-----|---------|
+| Raspberry Pi 5 | 0.1 kg | 0.1 kg | 0.1 kg |
+| 4S LiPo 8000mAh | 0.8 kg | 0.8 kg | 0.8 kg |
+| Frame + mounts | 2.5 kg | 0.5 kg | 0.8 kg |
+| Motors (4x) | 0.8 kg | 0.8 kg | 0.8 kg |
+| Wheels (4x 192mm) | 3.2 kg | 3.2 kg | 3.2 kg |
+| Electronics | 0.5 kg | 0.5 kg | 0.5 kg |
+| **Total** | **~8.3 kg** | **~6.3 kg** | **~6.6 kg** |
 
 Wheel capacity: 4 × 6kg = 24kg ✓
+Payload capacity: 15-18 kg depending on frame
 
 ## Bill of Materials
 
-### Frame (~$100)
+### Frame Option A: T-Slot (~$100)
 
 | Item | Qty | Source | Est. Price |
 |------|-----|--------|------------|
 | 1" T-slot extrusion (1m lengths) | 4 | OpenBuilds | $60 |
 | Corner brackets, T-nuts, hardware | 1 kit | OpenBuilds | $40 |
 
-### Frame Hardware (~$50)
+### Frame Option C: Al Square Tube (~$25)
+
+| Item | Qty | Source | Est. Price |
+|------|-----|--------|------------|
+| 1"x1" Al tube 1/16" wall 8ft | 2 | Home Depot/Metal supplier | $15 |
+| 3D printed corner brackets | 4 | ~120g PETG | $3 |
+| 3D printed motor mounts | 4 | ~80g PETG | $2 |
+| M5 bolts + nuts | 1 kit | Amazon | $5 |
+
+*Cuts: 2x 24" rails, 2x 12" cross members, 4x 6" motor extensions*
+
+### Frame Hardware (~$50 T-slot / $0 Al Tube)
 
 | Item | Qty | Source | Est. Price |
 |------|-----|--------|------------|

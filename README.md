@@ -9,16 +9,24 @@ Autonomous rover platform with on-device ROS2 and offloaded AI reasoning via enc
 
 | Spec | Value |
 |------|-------|
-| Chassis | 24" x 12" T-slot aluminum |
+| Chassis | 24" x 12" (T-slot / PVC / Al tube options) |
 | Motors | Pololu 37D 131:1 (76 RPM) |
 | Wheels | 7.6" Wasteland (192mm) |
 | Speed | 1.5 mph |
 | Ground Clearance | ~4" |
-| Weight | ~8.3 kg |
+| Weight | 6.3-8.3 kg (depends on frame) |
 | Battery | 4S LiPo 8000mAh |
 | Runtime | ~2+ hours |
 | On-board Brain | Raspberry Pi 5 16GB (ROS2 Jazzy) |
 | Off-board AI | MacBook Pro M3 Max 36GB (Ollama) |
+
+### Frame Options
+
+| Option | Cost | Weight | Rigidity |
+|--------|------|--------|----------|
+| T-Slot Aluminum | $100 | 2.5 kg | Best |
+| PVC + Flat Bar | $40 | 0.5 kg | Good |
+| Al Square Tube + Printed Brackets | $25 | 0.8 kg | Very Good |
 
 ## Hardware Summary
 

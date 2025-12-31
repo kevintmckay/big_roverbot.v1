@@ -1,12 +1,11 @@
 # Custom Rover Chassis Build
 
-24" x 12" frame with Pololu motors. Three frame options available:
+24" x 12" frame with Pololu motors. Two frame options available:
 
 | Option | Cost | Weight | Notes |
 |--------|------|--------|-------|
-| T-Slot Aluminum | $100 | 2.5 kg | Most adjustable, recommended |
-| PVC + Flat Bar | $40 | 0.5 kg | Budget option, see PVC_FRAME_DESIGN.md |
-| Al Square Tube | $25 | 0.8 kg | Lightest rigid option, printed brackets |
+| T-Slot Aluminum | $100 | 5.5 lbs | Most adjustable, professional look |
+| Al Square Tube | $25 | 1.8 lbs | Lightest, printed brackets |
 
 ## Specifications
 
@@ -48,18 +47,18 @@ Good torque for hills and rough terrain.
 
 ### Weight Budget
 
-| Component | T-Slot | PVC | Al Tube |
-|-----------|--------|-----|---------|
-| Raspberry Pi 5 | 0.1 kg | 0.1 kg | 0.1 kg |
-| 4S LiPo 8000mAh | 0.8 kg | 0.8 kg | 0.8 kg |
-| Frame + mounts | 2.5 kg | 0.5 kg | 0.8 kg |
-| Motors (4x) | 0.8 kg | 0.8 kg | 0.8 kg |
-| Wheels (4x 192mm) | 3.2 kg | 3.2 kg | 3.2 kg |
-| Electronics | 0.5 kg | 0.5 kg | 0.5 kg |
-| **Total** | **~8.3 kg** | **~6.3 kg** | **~6.6 kg** |
+| Component | T-Slot | Al Tube |
+|-----------|--------|---------|
+| Raspberry Pi 5 | 0.2 lbs | 0.2 lbs |
+| 4S LiPo 8000mAh | 1.8 lbs | 1.8 lbs |
+| Frame + mounts | 5.5 lbs | 1.8 lbs |
+| Motors (4x) | 1.8 lbs | 1.8 lbs |
+| Wheels (4x 192mm) | 7.0 lbs | 7.0 lbs |
+| Electronics | 1.1 lbs | 1.1 lbs |
+| **Total** | **~18 lbs** | **~15 lbs** |
 
-Wheel capacity: 4 × 6kg = 24kg ✓
-Payload capacity: 15-18 kg depending on frame
+Wheel capacity: 4 × 13 lbs = 52 lbs ✓
+Payload capacity: 34-37 lbs depending on frame
 
 ## Bill of Materials
 

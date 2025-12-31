@@ -22,28 +22,16 @@ Generated: 2024-12-27
 | 4 | goBILDA 1309 Sonic Hub 6mm D-Bore | $32 | https://www.gobilda.com/1309-series-sonic-hub-6mm-d-bore/ |
 | 2 | Cytron MDD10A Dual Motor Driver | $30 | https://www.amazon.com/dp/B01N0XHZZ0 |
 
-### Frame - $100 / $40 PVC / $25 Al Tube
+### Frame - $100 T-Slot / $25 Al Tube
 
-**OPTION A: T-Slot Aluminum - $100** (recommended)
+**OPTION A: T-Slot Aluminum - $100** (recommended, most professional)
 
 | Qty | Item | Price | URL |
 |-----|------|-------|-----|
 | 4 | OpenBuilds V-Slot 20x20mm 1000mm | $60 | https://openbuildspartstore.com/v-slot-20x20-linear-rail/ |
 | 1 | OpenBuilds Hardware Kit (brackets, T-nuts) | $40 | https://openbuildspartstore.com/black-angle-corner-connector/ |
 
-**OPTION B: 1" PVC + Flat Bar - $40** (budget)
-
-| Qty | Item | Price | Source |
-|-----|------|-------|--------|
-| 1 | 1" Schedule 40 PVC 10' | $10 | Home Depot/Lowes |
-| 1 | Aluminum flat bar 1.5"x1/8" 36" | $8 | Home Depot/Lowes |
-| 1 | Aluminum angle 1"x1"x1/8" 36" | $7 | Home Depot/Lowes |
-| - | 3D printed connectors | $5 | ~100g PETG |
-| - | Hardware (M5, M4, M3 bolts) | $10 | Amazon |
-
-*See [PVC_FRAME_DESIGN.md](PVC_FRAME_DESIGN.md) for full build details*
-
-**OPTION C: Aluminum Square Tube + Printed Brackets - $25** (lightest)
+**OPTION B: Aluminum Square Tube + Printed Brackets - $25** (lightest)
 
 | Qty | Item | Price | Source |
 |-----|------|-------|--------|
@@ -58,11 +46,10 @@ Frame comparison:
 
 | Option | Cost | Weight | Rigidity | Adjustability |
 |--------|------|--------|----------|---------------|
-| A: T-Slot | $100 | 2.5 kg | Best | Easy |
-| B: PVC | $40 | 0.5 kg | Good | Fixed |
-| C: Al Tube | $25 | 0.8 kg | Very Good | Fixed |
+| A: T-Slot | $100 | 5.5 lbs | Best | Easy |
+| B: Al Tube | $25 | 1.8 lbs | Very Good | Fixed |
 
-### Frame Hardware - $24 (T-slot) / $0 (PVC/Al Tube)
+### Frame Hardware - $24 (T-slot) / $0 (Al Tube)
 
 **For T-Slot Option A:**
 
@@ -72,9 +59,7 @@ Frame comparison:
 
 *Note: Drill 2 holes per bracket to 5.5mm for M5 T-slot mounting*
 
-**For PVC Option B:** Motor mounts included in flat bar cost above
-
-**For Al Tube Option C:** Motor mounts are 3D printed (included above)
+**For Al Tube Option B:** Motor mounts are 3D printed (included above)
 
 ### Sensors - $99
 
@@ -117,7 +102,7 @@ Frame comparison:
 | 1 | 22AWG Hookup Wire Kit | $8 | https://www.amazon.com/dp/B07TX6BX47 |
 | 1 | USB-A to USB-B Cable (for Arduino) | $4 | https://www.amazon.com/dp/B00NH11KIK |
 
-### **TIER 1 SUBTOTAL: ~$899 (T-slot) / ~$815 (PVC) / ~$800 (Al Tube)**
+### **TIER 1 SUBTOTAL: ~$899 (T-slot) / ~$800 (Al Tube)**
 
 ---
 
@@ -152,13 +137,13 @@ Frame comparison:
 
 ## GRAND TOTAL
 
-| Category | T-Slot Frame | PVC Frame | Al Tube Frame |
-|----------|--------------|-----------|---------------|
-| Tier 1 (Essential) | ~$899 | ~$815 | ~$800 |
-| Tier 2 (Enhanced) | ~$240 | ~$240 | ~$240 |
-| **TOTAL TO BUY** | **~$1139** | **~$1055** | **~$1040** |
-| 3D Print Savings | -$80 to -$120 | -$80 to -$120 | -$75 to -$115 |
-| **NET TOTAL** | **~$1019 - $1059** | **~$935 - $975** | **~$925 - $965** |
+| Category | T-Slot Frame | Al Tube Frame |
+|----------|--------------|---------------|
+| Tier 1 (Essential) | ~$899 | ~$800 |
+| Tier 2 (Enhanced) | ~$240 | ~$240 |
+| **TOTAL TO BUY** | **~$1139** | **~$1040** |
+| 3D Print Savings | -$80 to -$120 | -$75 to -$115 |
+| **NET TOTAL** | **~$1019 - $1059** | **~$925 - $965** |
 
 ---
 

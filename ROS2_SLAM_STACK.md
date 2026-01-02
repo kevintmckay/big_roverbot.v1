@@ -1,6 +1,6 @@
 # ROS2 SLAM Stack Configuration
 
-Complete SLAM and navigation stack for RoverBot v1.
+Complete SLAM and navigation stack for Big RoverBot v1.
 
 ## Hardware Summary
 
@@ -65,36 +65,36 @@ sudo apt install -y \
 
 ```bash
 # Create workspace
-mkdir -p ~/roverbot_ws/src
-cd ~/roverbot_ws/src
+mkdir -p ~/big_roverbot_ws/src
+cd ~/big_roverbot_ws/src
 
 # Create robot package
-ros2 pkg create --build-type ament_python roverbot \
+ros2 pkg create --build-type ament_python big_roverbot \
   --dependencies rclpy geometry_msgs sensor_msgs nav_msgs
 
 # Create config and launch directories
-mkdir -p roverbot/config
-mkdir -p roverbot/launch
-mkdir -p roverbot/urdf
+mkdir -p big_roverbot/config
+mkdir -p big_roverbot/launch
+mkdir -p big_roverbot/urdf
 
 # Build
-cd ~/roverbot_ws
+cd ~/big_roverbot_ws
 colcon build --symlink-install
 source install/setup.bash
 
 # Add to .bashrc
-echo "source ~/roverbot_ws/install/setup.bash" >> ~/.bashrc
+echo "source ~/big_roverbot_ws/install/setup.bash" >> ~/.bashrc
 ```
 
 ---
 
 ## 3. Robot URDF
 
-Create `roverbot/urdf/roverbot.urdf.xacro`:
+Create `big_roverbot/urdf/big_roverbot.urdf.xacro`:
 
 ```xml
 <?xml version="1.0"?>
-<robot xmlns:xacro="http://www.ros.org/wiki/xacro" name="roverbot">
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro" name="big_roverbot">
 
   <!-- Properties based on actual rover dimensions -->
   <xacro:property name="chassis_length" value="0.610"/>  <!-- 24 inches -->
@@ -224,7 +224,7 @@ Create `roverbot/urdf/roverbot.urdf.xacro`:
 
 ### 4.1 RPLidar Launch
 
-Create `roverbot/launch/rplidar.launch.py`:
+Create `big_roverbot/launch/rplidar.launch.py`:
 
 ```python
 from launch import LaunchDescription
@@ -250,7 +250,7 @@ def generate_launch_description():
 
 ### 4.2 RealSense Launch
 
-Create `roverbot/launch/realsense.launch.py`:
+Create `big_roverbot/launch/realsense.launch.py`:
 
 ```python
 from launch import LaunchDescription
@@ -282,7 +282,7 @@ def generate_launch_description():
 
 ### 4.3 GPS Launch
 
-Create `roverbot/launch/gps.launch.py`:
+Create `big_roverbot/launch/gps.launch.py`:
 
 ```python
 from launch import LaunchDescription
@@ -311,7 +311,7 @@ def generate_launch_description():
 
 ## 5. Robot Localization (EKF Sensor Fusion)
 
-Create `roverbot/config/ekf.yaml`:
+Create `big_roverbot/config/ekf.yaml`:
 
 ```yaml
 # Extended Kalman Filter configuration
@@ -417,7 +417,7 @@ navsat_transform_node:
 
 ### 6.1 slam_toolbox (2D SLAM - Primary)
 
-Create `roverbot/config/slam_toolbox.yaml`:
+Create `big_roverbot/config/slam_toolbox.yaml`:
 
 ```yaml
 slam_toolbox:
@@ -488,7 +488,7 @@ slam_toolbox:
 
 ### 6.2 RTABMAP (3D SLAM - When using D435)
 
-Create `roverbot/config/rtabmap.yaml`:
+Create `big_roverbot/config/rtabmap.yaml`:
 
 ```yaml
 rtabmap_ros:
@@ -532,7 +532,7 @@ rtabmap_ros:
 
 ## 7. Nav2 Configuration
 
-Create `roverbot/config/nav2_params.yaml`:
+Create `big_roverbot/config/nav2_params.yaml`:
 
 ```yaml
 amcl:
@@ -858,7 +858,7 @@ velocity_smoother:
 
 ## 8. Main Launch File
 
-Create `roverbot/launch/roverbot.launch.py`:
+Create `big_roverbot/launch/big_roverbot.launch.py`:
 
 ```python
 import os
@@ -872,7 +872,7 @@ from launch_ros.actions import Node
 import xacro
 
 def generate_launch_description():
-    pkg_dir = get_package_share_directory('roverbot')
+    pkg_dir = get_package_share_directory('big_roverbot')
 
     # Launch arguments
     use_sim_time = LaunchConfiguration('use_sim_time', default='false')
@@ -880,7 +880,7 @@ def generate_launch_description():
     nav_mode = LaunchConfiguration('nav', default='true')
 
     # Process URDF
-    urdf_file = os.path.join(pkg_dir, 'urdf', 'roverbot.urdf.xacro')
+    urdf_file = os.path.join(pkg_dir, 'urdf', 'big_roverbot.urdf.xacro')
     robot_description = xacro.process_file(urdf_file).toxml()
 
     return LaunchDescription([
@@ -1028,19 +1028,19 @@ ros2 run micro_ros_agent micro_ros_agent serial --dev /dev/ttyACM0
 
 ```bash
 # Terminal 1: Launch robot
-ros2 launch roverbot roverbot.launch.py
+ros2 launch big_roverbot big_roverbot.launch.py
 
 # Terminal 2: Teleop (keyboard control)
 ros2 run teleop_twist_keyboard teleop_twist_keyboard
 
 # Terminal 3: Visualize in RViz2
-rviz2 -d ~/roverbot_ws/src/roverbot/config/roverbot.rviz
+rviz2 -d ~/big_roverbot_ws/src/big_roverbot/config/big_roverbot.rviz
 
 # Save map after SLAM
 ros2 run nav2_map_server map_saver_cli -f ~/maps/my_map
 
 # Load map for navigation (no SLAM)
-ros2 launch roverbot roverbot.launch.py slam:=false map:=~/maps/my_map.yaml
+ros2 launch big_roverbot big_roverbot.launch.py slam:=false map:=~/maps/my_map.yaml
 ```
 
 ---

@@ -11,7 +11,7 @@ A complete comparison of all rover options.
 | Crawlbot v1 | 305×170mm | 1.2 kg | 95mm | ~$150 | All-terrain, existing |
 | Mid-Rover | 300×200mm | 1.5 kg | 85mm | ~$320 | Budget, indoor |
 | Mid-Rover XL | 500×350mm | 4.5 kg | 100mm | ~$540 | Payload, dev platform |
-| RoverBot v1 | 610×305mm | 8.3 kg | 192mm | ~$1000 | Outdoor, professional |
+| Big RoverBot v1 | 610×305mm | 8.3 kg | 192mm | ~$1000 | Outdoor, professional |
 
 ---
 
@@ -21,7 +21,7 @@ A complete comparison of all rover options.
                         ← 610mm (24") →
     ┌─────────────────────────────────────────────────────┐
     │ ●                                                 ● │
-    │                    RoverBot v1                      │  305mm
+    │                  Big RoverBot v1                    │  305mm
     │                    8.3 kg                           │  (12")
     │ ●                                                 ● │
     └─────────────────────────────────────────────────────┘
@@ -58,7 +58,7 @@ Standard 12oz Coca-Cola can: **122mm tall × 66mm diameter**
 | Crawlbot v1 | 2.5× | 78% height |
 | Mid-Rover | 2.5× | 70% height |
 | Mid-Rover XL | 4× | 82% height |
-| RoverBot v1 | 5× | 157% height |
+| Big RoverBot v1 | 5× | 157% height |
 
 ---
 
@@ -106,7 +106,7 @@ LX-16A → goBILDA 25T-to-6mm → 85mm Wheel
 **Pros:** Cheapest, simple wiring, lightweight
 **Cons:** Slow, no encoder odometry, needs 2S battery
 
-**Location:** `/home/kevin/robots/roverbot.v1/mid-rover/`
+**Location:** `/home/kevin/robots/big_roverbot.v1/mid-rover/`
 
 ---
 
@@ -142,11 +142,11 @@ LX-16A → goBILDA 25T-to-6mm → 6mm-to-12mm Hex → 100mm Crawler Wheel
 **Pros:** Payload capacity, chunky wheels, expandable
 **Cons:** Near torque limits, slow, complex adapters
 
-**Location:** `/home/kevin/robots/roverbot.v1/mid-rover-xl/`
+**Location:** `/home/kevin/robots/big_roverbot.v1/mid-rover-xl/`
 
 ---
 
-## RoverBot v1
+## Big RoverBot v1
 
 **Status:** Designed, not built
 
@@ -176,7 +176,7 @@ Pololu 37D → L-Bracket → goBILDA Sonic Hub → 192mm Wasteland Wheel
 **Pros:** Fast, true all-terrain, encoders, uses 4S batteries
 **Cons:** Most expensive, heaviest
 
-**Location:** `/home/kevin/robots/roverbot.v1/`
+**Location:** `/home/kevin/robots/big_roverbot.v1/`
 
 ---
 
@@ -196,7 +196,7 @@ Pololu 37D → L-Bracket → goBILDA Sonic Hub → 192mm Wasteland Wheel
 | Crawlbot | Stock RC | 95mm | 35mm | Crawler |
 | Mid-Rover | Rubber+sponge | 85mm | 33mm | Thick rubber |
 | Mid-Rover XL | RC Crawler | 100mm | 40mm | Deep lug, foam |
-| RoverBot v1 | Wasteland | 192mm | 72mm | Off-road |
+| Big RoverBot v1 | Wasteland | 192mm | 72mm | Off-road |
 
 ---
 
@@ -207,7 +207,7 @@ Pololu 37D → L-Bracket → goBILDA Sonic Hub → 192mm Wasteland Wheel
 | Crawlbot | 2S | 2200mAh | ~1 hr |
 | Mid-Rover | 2S | 5000mAh | ~3 hr |
 | Mid-Rover XL | 2S | 10000mAh | ~4 hr |
-| RoverBot v1 | 4S→12V | 8000mAh | ~2 hr |
+| Big RoverBot v1 | 4S→12V | 8000mAh | ~2 hr |
 
 ---
 
@@ -234,7 +234,7 @@ Pololu 37D → L-Bracket → goBILDA Sonic Hub → 192mm Wasteland Wheel
            │                 │      YES               NO
            ▼                 ▼       │                 │
      ┌──────────┐     ┌──────────┐   ▼                 ▼
-     │ RoverBot │     │ Crawlbot │  ┌──────────┐  ┌──────────┐
+     │   Big    │     │ Crawlbot │  ┌──────────┐  ┌──────────┐
      │    v1    │     │    v1    │  │ Mid-Rover│  │ Mid-Rover│
      │  $1000   │     │  $150    │  │    XL    │  │  $320    │
      └──────────┘     │ (exists) │  │   $540   │  └──────────┘
@@ -251,7 +251,7 @@ $0        $250       $500       $750       $1000
 Crawlbot   ████ $150
 Mid-Rover  ██████████ $320
 Mid-Rover XL ████████████████ $540
-RoverBot v1 █████████████████████████████████ $1000
+Big RoverBot v1 █████████████████████████████████ $1000
 ```
 
 ---
@@ -263,7 +263,7 @@ RoverBot v1 ██████████████████████�
 ├── crawlbot.v1/
 │   └── ros2_ws/src/.../crawlbot.urdf.xacro
 │
-└── roverbot.v1/
+└── big_roverbot.v1/
     ├── README.md
     ├── SHOPPING_LIST.md
     ├── CHASSIS_BUILD.md

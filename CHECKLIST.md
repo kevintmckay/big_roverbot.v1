@@ -1,4 +1,4 @@
-# RoverBot v1 Shopping Checklist
+# Big RoverBot v1 Shopping Checklist
 
 ## Already Owned
 

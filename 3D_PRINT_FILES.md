@@ -1,6 +1,6 @@
 # 3D Printable Parts - STL Links
 
-STL files for mounting components to the RoverBot v1 frame.
+STL files for mounting components to the Big RoverBot v1 frame.
 
 ---
 

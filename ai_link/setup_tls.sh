@@ -22,7 +22,7 @@ KEY_SIZE=4096
 # Server details (customize these)
 SERVER_IP="${SERVER_IP:-192.168.1.100}"
 SERVER_HOSTNAME="${SERVER_HOSTNAME:-gpu-server}"
-ROBOT_HOSTNAME="${ROBOT_HOSTNAME:-roverbot}"
+ROBOT_HOSTNAME="${ROBOT_HOSTNAME:-big_roverbot}"
 
 echo "=== AI-Link TLS Certificate Setup ==="
 echo "Output directory: $OUTPUT_DIR"

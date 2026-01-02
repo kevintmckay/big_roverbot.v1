@@ -1,12 +1,12 @@
 # AI-Link
 
-Secure communication module for offloading complex AI tasks from the RoverBot to a remote Ollama server over encrypted WiFi.
+Secure communication module for offloading complex AI tasks from Big RoverBot to a remote Ollama server over encrypted WiFi.
 
 ## Architecture
 
 ```
 +-------------------+          TLS/HTTPS           +-------------------+
-|    RoverBot       |  =========================>  |   MacBook Pro     |
+|  Big RoverBot     |  =========================>  |   MacBook Pro     |
 |    (Pi 5)         |         WiFi LAN             |   M3 Max 36GB     |
 |                   |                              |                   |
 |  +-------------+  |                              |  +-------------+  |
@@ -48,11 +48,11 @@ Secure communication module for offloading complex AI tasks from the RoverBot to
 pip install aiohttp
 
 # Clone or copy ai_link module
-cp -r ai_link /path/to/ros2_ws/src/roverbot/
+cp -r ai_link /path/to/ros2_ws/src/big_roverbot/
 
 # For ROS2 integration
 cd /path/to/ros2_ws
-colcon build --packages-select roverbot
+colcon build --packages-select big_roverbot
 ```
 
 ### On Server (MacBook Pro M3 Max)
@@ -193,7 +193,7 @@ response = await client.make_decision(
 ### Launch Node
 
 ```bash
-ros2 run roverbot ai_link_node --ros-args \
+ros2 run big_roverbot ai_link_node --ros-args \
     -p host:=192.168.1.100 \
     -p port:=11434 \
     -p use_tls:=true \

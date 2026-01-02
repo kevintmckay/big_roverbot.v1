@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-AI-Link ROS2 Node: Integrates AI-Link with ROS2 for the roverbot.
+AI-Link ROS2 Node: Integrates AI-Link with ROS2 for Big RoverBot.
 
 Provides ROS2 services and topics for offloading AI tasks to the
 remote GPU server running Ollama.

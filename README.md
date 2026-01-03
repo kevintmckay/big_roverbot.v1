@@ -142,8 +142,6 @@ Autonomous rover platform with on-device ROS2 and offloaded AI reasoning via enc
 | SHOPPING_LIST.md | Complete parts list with URLs |
 | CHECKLIST.md | Shopping checklist with status |
 | CHASSIS_BUILD.md | Custom 24"x12" T-slot chassis build |
-| MOTOR_MOUNT_DESIGN.md | Motor mounting details |
-| ROS2_GUIDE.md | ROS2 concepts and getting started |
 | ROS2_SLAM_STACK.md | Full SLAM/Nav2 setup guide |
 | old-parts.md | Inventory of existing parts |
 
